@@ -47,7 +47,6 @@ namespace ImageConverter
             this.ImagePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ClearAllButton = new Guna.UI.WinForms.GunaButton();
             this.ClearSelectedButton = new Guna.UI.WinForms.GunaButton();
-            this.LinePanel = new System.Windows.Forms.Panel();
             this.SelectedCountLabel = new Guna.UI.WinForms.GunaLabel();
             this.EMFButton = new Guna.UI.WinForms.GunaRadioButton();
             this.BMPButton = new Guna.UI.WinForms.GunaRadioButton();
@@ -59,7 +58,6 @@ namespace ImageConverter
             this.PNGButton = new Guna.UI.WinForms.GunaRadioButton();
             this.TIFFButton = new Guna.UI.WinForms.GunaRadioButton();
             this.DropPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.Step3Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.Step3Label = new System.Windows.Forms.Label();
             this.Line2 = new System.Windows.Forms.Panel();
@@ -73,6 +71,8 @@ namespace ImageConverter
             this.Tip2Label = new System.Windows.Forms.Label();
             this.TipPanel = new System.Windows.Forms.Panel();
             this.VersionLabel = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.LinePanel = new System.Windows.Forms.Panel();
             this.Header.SuspendLayout();
             this.DropPanel.SuspendLayout();
             this.Step3Panel.SuspendLayout();
@@ -103,7 +103,7 @@ namespace ImageConverter
             this.ConvertButton.AnimationHoverSpeed = 0.07F;
             this.ConvertButton.AnimationSpeed = 0.03F;
             this.ConvertButton.BackColor = System.Drawing.Color.Transparent;
-            this.ConvertButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
+            this.ConvertButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(83)))), ((int)(((byte)(163)))));
             this.ConvertButton.BorderColor = System.Drawing.Color.Black;
             this.ConvertButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConvertButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -112,7 +112,7 @@ namespace ImageConverter
             this.ConvertButton.ForeColor = System.Drawing.Color.White;
             this.ConvertButton.Image = null;
             this.ConvertButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ConvertButton.Location = new System.Drawing.Point(85, 574);
+            this.ConvertButton.Location = new System.Drawing.Point(89, 574);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.ConvertButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -120,7 +120,7 @@ namespace ImageConverter
             this.ConvertButton.OnHoverImage = null;
             this.ConvertButton.OnPressedColor = System.Drawing.Color.Black;
             this.ConvertButton.Radius = 14;
-            this.ConvertButton.Size = new System.Drawing.Size(111, 42);
+            this.ConvertButton.Size = new System.Drawing.Size(95, 42);
             this.ConvertButton.TabIndex = 2;
             this.ConvertButton.Text = "Convert";
             this.ConvertButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -215,7 +215,7 @@ namespace ImageConverter
             this.OpenFolderButton.ForeColor = System.Drawing.Color.White;
             this.OpenFolderButton.Image = null;
             this.OpenFolderButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.OpenFolderButton.Location = new System.Drawing.Point(202, 574);
+            this.OpenFolderButton.Location = new System.Drawing.Point(190, 574);
             this.OpenFolderButton.Name = "OpenFolderButton";
             this.OpenFolderButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(110)))), ((int)(((byte)(230)))));
             this.OpenFolderButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -223,9 +223,9 @@ namespace ImageConverter
             this.OpenFolderButton.OnHoverImage = null;
             this.OpenFolderButton.OnPressedColor = System.Drawing.Color.Black;
             this.OpenFolderButton.Radius = 14;
-            this.OpenFolderButton.Size = new System.Drawing.Size(157, 42);
+            this.OpenFolderButton.Size = new System.Drawing.Size(121, 42);
             this.OpenFolderButton.TabIndex = 15;
-            this.OpenFolderButton.Text = "Open output folder";
+            this.OpenFolderButton.Text = "Open folder";
             this.OpenFolderButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.OpenFolderButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             this.OpenFolderButton.Click += new System.EventHandler(this.OpenFolderButton_Click);
@@ -320,7 +320,7 @@ namespace ImageConverter
             this.ClearAllButton.AnimationHoverSpeed = 0.07F;
             this.ClearAllButton.AnimationSpeed = 0.03F;
             this.ClearAllButton.BackColor = System.Drawing.Color.Transparent;
-            this.ClearAllButton.BaseColor = System.Drawing.Color.Firebrick;
+            this.ClearAllButton.BaseColor = System.Drawing.Color.DarkRed;
             this.ClearAllButton.BorderColor = System.Drawing.Color.Black;
             this.ClearAllButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearAllButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -329,7 +329,7 @@ namespace ImageConverter
             this.ClearAllButton.ForeColor = System.Drawing.Color.White;
             this.ClearAllButton.Image = null;
             this.ClearAllButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ClearAllButton.Location = new System.Drawing.Point(347, 444);
+            this.ClearAllButton.Location = new System.Drawing.Point(89, 444);
             this.ClearAllButton.Name = "ClearAllButton";
             this.ClearAllButton.OnHoverBaseColor = System.Drawing.Color.Red;
             this.ClearAllButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -337,7 +337,7 @@ namespace ImageConverter
             this.ClearAllButton.OnHoverImage = null;
             this.ClearAllButton.OnPressedColor = System.Drawing.Color.Black;
             this.ClearAllButton.Radius = 14;
-            this.ClearAllButton.Size = new System.Drawing.Size(111, 42);
+            this.ClearAllButton.Size = new System.Drawing.Size(95, 42);
             this.ClearAllButton.TabIndex = 19;
             this.ClearAllButton.Text = "Clear all";
             this.ClearAllButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -351,7 +351,7 @@ namespace ImageConverter
             this.ClearSelectedButton.AnimationHoverSpeed = 0.07F;
             this.ClearSelectedButton.AnimationSpeed = 0.03F;
             this.ClearSelectedButton.BackColor = System.Drawing.Color.Transparent;
-            this.ClearSelectedButton.BaseColor = System.Drawing.Color.Firebrick;
+            this.ClearSelectedButton.BaseColor = System.Drawing.Color.Brown;
             this.ClearSelectedButton.BorderColor = System.Drawing.Color.Black;
             this.ClearSelectedButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearSelectedButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -360,7 +360,7 @@ namespace ImageConverter
             this.ClearSelectedButton.ForeColor = System.Drawing.Color.White;
             this.ClearSelectedButton.Image = null;
             this.ClearSelectedButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ClearSelectedButton.Location = new System.Drawing.Point(464, 444);
+            this.ClearSelectedButton.Location = new System.Drawing.Point(190, 444);
             this.ClearSelectedButton.Name = "ClearSelectedButton";
             this.ClearSelectedButton.OnHoverBaseColor = System.Drawing.Color.Red;
             this.ClearSelectedButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -368,23 +368,12 @@ namespace ImageConverter
             this.ClearSelectedButton.OnHoverImage = null;
             this.ClearSelectedButton.OnPressedColor = System.Drawing.Color.Black;
             this.ClearSelectedButton.Radius = 14;
-            this.ClearSelectedButton.Size = new System.Drawing.Size(121, 42);
+            this.ClearSelectedButton.Size = new System.Drawing.Size(132, 42);
             this.ClearSelectedButton.TabIndex = 20;
             this.ClearSelectedButton.Text = "Clear selected";
             this.ClearSelectedButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ClearSelectedButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             this.ClearSelectedButton.Click += new System.EventHandler(this.ClearSelectedButton_Click);
-            // 
-            // LinePanel
-            // 
-            this.LinePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LinePanel.BackColor = System.Drawing.Color.DarkGray;
-            this.LinePanel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LinePanel.Location = new System.Drawing.Point(87, 492);
-            this.LinePanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.LinePanel.Name = "LinePanel";
-            this.LinePanel.Size = new System.Drawing.Size(496, 2);
-            this.LinePanel.TabIndex = 21;
             // 
             // SelectedCountLabel
             // 
@@ -568,17 +557,6 @@ namespace ImageConverter
             this.DropPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DropPanel_DragEnter);
             this.DropPanel.DragLeave += new System.EventHandler(this.DropPanel_DragLeave);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel3.Location = new System.Drawing.Point(89, 167);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(496, 2);
-            this.panel3.TabIndex = 43;
-            // 
             // Step3Panel
             // 
             this.Step3Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -716,6 +694,7 @@ namespace ImageConverter
             // 
             // TipPanel
             // 
+            this.TipPanel.BackColor = System.Drawing.Color.Transparent;
             this.TipPanel.Controls.Add(this.Tip1Label);
             this.TipPanel.Controls.Add(this.Step3Panel);
             this.TipPanel.Controls.Add(this.Tip2Label);
@@ -724,9 +703,9 @@ namespace ImageConverter
             this.TipPanel.Controls.Add(this.Step2Panel);
             this.TipPanel.Controls.Add(this.Step1Panel);
             this.TipPanel.Controls.Add(this.Line1);
-            this.TipPanel.Location = new System.Drawing.Point(8, 42);
+            this.TipPanel.Location = new System.Drawing.Point(8, 40);
             this.TipPanel.Name = "TipPanel";
-            this.TipPanel.Size = new System.Drawing.Size(75, 561);
+            this.TipPanel.Size = new System.Drawing.Size(75, 576);
             this.TipPanel.TabIndex = 3;
             // 
             // VersionLabel
@@ -736,13 +715,35 @@ namespace ImageConverter
             this.VersionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VersionLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.VersionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.VersionLabel.Location = new System.Drawing.Point(521, 598);
+            this.VersionLabel.Location = new System.Drawing.Point(444, 574);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(64, 18);
+            this.VersionLabel.Size = new System.Drawing.Size(137, 42);
             this.VersionLabel.TabIndex = 62;
-            this.VersionLabel.Text = "v1.0.0";
+            this.VersionLabel.Text = "GitHub: qlulp\r\nVersion: v1.0.0";
             this.VersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.VersionLabel.Click += new System.EventHandler(this.VersionLabel_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel3.Location = new System.Drawing.Point(89, 167);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(496, 2);
+            this.panel3.TabIndex = 43;
+            // 
+            // LinePanel
+            // 
+            this.LinePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LinePanel.BackColor = System.Drawing.Color.DarkGray;
+            this.LinePanel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.LinePanel.Location = new System.Drawing.Point(87, 492);
+            this.LinePanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.LinePanel.Name = "LinePanel";
+            this.LinePanel.Size = new System.Drawing.Size(496, 2);
+            this.LinePanel.TabIndex = 21;
             // 
             // MainForm
             // 
@@ -805,7 +806,6 @@ namespace ImageConverter
         private System.Windows.Forms.FlowLayoutPanel ImagePanel;
         private Guna.UI.WinForms.GunaButton ClearAllButton;
         private Guna.UI.WinForms.GunaButton ClearSelectedButton;
-        private System.Windows.Forms.Panel LinePanel;
         private Guna.UI.WinForms.GunaLabel SelectedCountLabel;
         private Guna.UI.WinForms.GunaRadioButton GIFButton;
         private Guna.UI.WinForms.GunaRadioButton EXIFButton;
@@ -817,7 +817,6 @@ namespace ImageConverter
         private Guna.UI.WinForms.GunaRadioButton PNGButton;
         private Guna.UI.WinForms.GunaRadioButton TIFFButton;
         private System.Windows.Forms.Panel DropPanel;
-        private System.Windows.Forms.Panel panel3;
         private Guna.UI.WinForms.GunaElipsePanel Step3Panel;
         private System.Windows.Forms.Label Step3Label;
         private System.Windows.Forms.Panel Line2;
@@ -831,6 +830,8 @@ namespace ImageConverter
         private System.Windows.Forms.Label Tip2Label;
         private System.Windows.Forms.Panel TipPanel;
         private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel LinePanel;
     }
 }
 

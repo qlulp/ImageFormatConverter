@@ -32,4 +32,7 @@ v1.1.0 features:
 - mnor bugs fixed
 
 # Screenshots
+
+v1.0.0
+
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)

@@ -1,5 +1,5 @@
-# ImageFormatConverter
-Convenient, simple and easy to use Image Format Converter
+# Image Format Converter
+## Lightweight, сonvenient and easy to use image format converter tool
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)
 
@@ -17,6 +17,19 @@ Image Format Converter allows you to convert images to the following formats
 - TIFF
 - WMF
 
+# Versions
+
+v1.0.0 features:
+- addition images
+- deletion images
+- preview images
+
+v1.1.0 features:
+- computing in the background (multithreading)
+- gradient status bar
+- updated user interface
+- changed application logic
+- mnor bugs fixed
 
 # Screenshots
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)

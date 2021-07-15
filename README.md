@@ -1,7 +1,7 @@
 # Image Format Converter
 ## Lightweight, сonvenient and easy to use image format converter tool
 
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/v1.1.0.JPG?raw=true)
 
 # Overview
 
@@ -29,6 +29,7 @@ v1.1.0 features:
 - added gradient status bar
 - updated user interface
 - added the ability to resize images
+- Optimized image preview (Now you can work with more than two hundred images)
 - added the ability to resize images while maintaining proportions
 - changed application logic
 - mnor bugs fixed

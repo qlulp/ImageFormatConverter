@@ -28,6 +28,8 @@ v1.1.0 features:
 - added computing in the background (multithreading)
 - added gradient status bar
 - updated user interface
+- added the ability to resize images
+- added the ability to resize images while maintaining proportions
 - changed application logic
 - mnor bugs fixed
 
@@ -36,3 +38,7 @@ v1.1.0 features:
 v1.0.0
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)
+
+v1.1.0
+
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/v1.1.0.JPG?raw=true)

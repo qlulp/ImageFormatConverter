@@ -25,8 +25,8 @@ v1.0.0 features:
 - preview images
 
 v1.1.0 features:
-- computing in the background (multithreading)
-- gradient status bar
+- added computing in the background (multithreading)
+- added gradient status bar
 - updated user interface
 - changed application logic
 - mnor bugs fixed

@@ -8,14 +8,16 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ImageConverter
 {
     public partial class MainForm : Form
     {
+        Manager ApplicationManager;
         private const string OutputFolder = @"Folder/";
-        private const int CountOfSteps = 3;
+        private const int CountOfSteps = 4;
         private int _CurrentStep = 1;
         public int CurrentStep
         {
@@ -32,6 +34,11 @@ namespace ImageConverter
         public MainForm()
         {
             InitializeComponent();
+
+            ApplicationManager = new Manager(ImagePanel, UploadProgressBar);
+            ApplicationManager.UpdateCountersMethod += UpdateCounters;
+            UpdateFormView();
+            ShowStepsCheckBox.Checked = Properties.Settings.Default.ShowStepsPanel;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -44,40 +51,43 @@ namespace ImageConverter
             WindowState = FormWindowState.Minimized;
         }
 
-        private void AddImagesOnPanel(List<Image> images)
+        private void AddImagesOnPanel(List<string> fileNames)
         {
-            foreach (Image image in images)
-            {
-                var temp = new ImageControl();
-                temp.CurrentImage = image;
-                temp.OnIsSelectedValueChanged += UpdateCounters;
-                ImagePanel.Controls.Add(temp);
-            }
+            UploadProgressBar.MaxValue = fileNames.Count;
+            ApplicationManager.AddImagesOnPanel(fileNames);
         }
 
+        
         private void UpdateCounters()
         {
-            int selectedCount = 0;
-            int count = 0;
-            foreach (ImageControl image in ImagePanel.Controls.OfType<ImageControl>())
+            if (InvokeRequired)
             {
-                if (image.IsSelected)
-                    selectedCount++;
-                count++;
+                this.Invoke(new MethodInvoker(UpdateCounters));
             }
-
-            SelectedCountLabel.Text = "Selected: " + selectedCount;
-            CountLabel.Text = "Count: " + count;
-
-            if (count > 0)
+            else
             {
-                CurrentStep = 3;
+                int selectedCount = 0;
+                int count = 0;
+                foreach (ImageControl image in ImagePanel.Controls.OfType<ImageControl>())
+                {
+                    if (image.IsSelected)
+                        selectedCount++;
+                    count++;
+                }
 
-                if (selectedCount > 0)
-                    CurrentStep = 2;
-                else CurrentStep = 3;
+                SelectedCountLabel.Text = "Selected: " + selectedCount;
+                CountLabel.Text = "Count: " + count;
+
+                if (count > 0)
+                {
+                    CurrentStep = 4;
+
+                    if (selectedCount > 0)
+                        CurrentStep = 2;
+                    else CurrentStep = 4;
+                }
+                else CurrentStep = 1;
             }
-            else CurrentStep = 1;
         }
 
         private void SelectFilesButton_Click(object sender, EventArgs e)
@@ -90,14 +100,10 @@ namespace ImageConverter
                 openFileDialog.Multiselect = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string[] fileNames = openFileDialog.FileNames;
-                    List<Image> images = new List<Image>();
-                    foreach (var fileName in fileNames)
-                    {
-                        images.Add(Image.FromFile(fileName));
-                    }
-
-                    AddImagesOnPanel(images);
+                    List<string> fileNames = openFileDialog.FileNames.ToList<string>();
+                    UploadProgressBar.Value = 0;
+                    UploadProgressBar.MaxValue = fileNames.Count;
+                    AddImagesOnPanel(fileNames);
                 }
             }
         }
@@ -117,26 +123,16 @@ namespace ImageConverter
         {
             try
             {
+                CurrentStep = 2;
                 DropPanel.BackColor = Color.White;
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                List<Image> images = new List<Image>();
-                if (files != null)
+                List<string> fileNames = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
+                if (fileNames != null)
                 {
-                    foreach (var fileName in files)
+                    if (fileNames.Count > 0)
                     {
-                        try
-                        {
-                            images.Add(Image.FromFile(fileName));
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Wrong file type!\n" + ex.Message);
-                        }
-                    }
-
-                    if (images.Count > 0)
-                    {
-                        AddImagesOnPanel(images);
+                        UploadProgressBar.Value = 0;
+                        UploadProgressBar.MaxValue = fileNames.Count;
+                        AddImagesOnPanel(fileNames);
                     }
                     UpdateCounters();
                 }
@@ -164,22 +160,41 @@ namespace ImageConverter
                 if (radioButton.Checked)
                 {
                     ImageFormat selectedFormat = GetFormat(radioButton);
-                    List<Image> images = GetImagesFromPanel();
-                    List<Bitmap> resultImages = Manager.ImagesToBitmapList(images);
+                    List<string> imageNames = GetFileNamesFromPanel();
+                    UploadProgressBar.MaxValue = imageNames.Count;
+                    bool resize = ResizeCheckBox.Checked;
+                    bool saveProportions = SavePropCheckBox.Checked;
+                    int width = int.Parse(WidthTextBox.Text);
+                    int height = int.Parse(HeightTextBox.Text);
 
-                    Manager.SaveImages(resultImages, OutputFolder, selectedFormat);
+                    ApplicationManager.SaveImages(imageNames, OutputFolder, selectedFormat, width, height, resize, saveProportions);
                     break;
                 }
             }
         }
 
-        private List<Image> GetImagesFromPanel()
+        delegate void UpdateProgressMethod(int value);
+        private void UpdateProgressValue(int value)
         {
-            List<Image> result = new List<Image>();
+            if (this.InvokeRequired)
+            {
+
+                this.Invoke(new UpdateProgressMethod(UpdateProgressValue));
+            }
+            else
+            {
+                UploadProgressBar.Value = value;
+                UploadProgressBar.Update();
+            }
+        }
+
+        private List<string> GetFileNamesFromPanel()
+        {
+            List<string> result = new List<string>();
 
             foreach (ImageControl image in ImagePanel.Controls.OfType<ImageControl>())
             {
-                result.Add(image.CurrentImage);
+                result.Add(image.Path);
             }
 
             return result;
@@ -241,13 +256,12 @@ namespace ImageConverter
 
         private void ClearAllButton_Click(object sender, EventArgs e)
         {
-            ImagePanel.Controls.Clear();
-            UpdateCounters();
+            ApplicationManager.ClearAllImages();
         }
 
         private void ClearSelectedButton_Click(object sender, EventArgs e)
         {
-            ClearSelectedItems();
+            ApplicationManager.ClearSelectedImages();
         }
 
         private void ClearSelectedItems()
@@ -298,6 +312,11 @@ namespace ImageConverter
                 case 3:
                     Tip3Label.ForeColor = CurrentTheme.ActiveColor;
                     Step3Panel.BaseColor = CurrentTheme.ActiveColor;
+                    Line3.BackColor = CurrentTheme.ActiveColor;
+                    break;
+                case 4:
+                    Tip4Label.ForeColor = CurrentTheme.ActiveColor;
+                    Step4Panel.BaseColor = CurrentTheme.ActiveColor;
                     break;
             }
         }
@@ -315,6 +334,107 @@ namespace ImageConverter
         private void VersionLabel_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/qlulp");
+        }
+
+        private void ImagePanel_MouseEnter(object sender, EventArgs e)
+        {
+            ImagePanel.Focus();
+        }
+
+        private void ResizeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
+            {
+                if (ResizeCheckBox.Checked)
+                {
+                    CurrentStep = 3;
+                }
+                else
+                {
+                    SavePropCheckBox.Checked = false;
+                    CurrentStep = 4;
+                }
+            }
+        }
+
+        private void WidthTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
+            {
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+                {
+                    e.Handled = true;
+                }
+                if (sender == WidthTextBox && e.KeyChar == (char)13)
+                {
+                    HeightTextBox.Focus();
+                }
+            }
+        }
+
+        private void WidthTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
+            {
+                if (int.TryParse((sender as GunaTextBox).Text, out int result))
+                {
+                    if (result.ToString().Length != (sender as GunaTextBox).Text.Length)
+                        (sender as GunaTextBox).Text = "1";
+                    if (result < 1 || result > 10000)
+                        (sender as GunaTextBox).Text = "1";
+                }
+                else
+                {
+                    (sender as GunaTextBox).Text = "1";
+                }
+                CurrentStep = 3;
+            }
+        }
+
+        private void SavePropCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
+            {
+                if (SavePropCheckBox.Checked)
+                {
+                    ResizeCheckBox.Checked = true;
+                    CurrentStep = 3;
+                }
+            }
+        }
+
+        private void ShowStepsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            Properties.Settings.Default.ShowStepsPanel = ShowStepsCheckBox.Checked;
+            Properties.Settings.Default.Save();
+            UpdateFormView();
+        }
+
+        private void UpdateFormView()
+        {
+            if (Properties.Settings.Default.ShowStepsPanel)
+            {
+                this.Width = 597;
+            }
+            else
+            {
+                this.Width = 520;
+            }
+        }
+
+        private void HeightTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
+            {
+                if (HeightTextBox.Focused)
+                    CurrentStep = 4;
+            }
+        }
+
+        private void progressBarControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

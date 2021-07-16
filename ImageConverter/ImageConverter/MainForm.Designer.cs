@@ -58,36 +58,48 @@ namespace ImageConverter
             this.PNGButton = new Guna.UI.WinForms.GunaRadioButton();
             this.TIFFButton = new Guna.UI.WinForms.GunaRadioButton();
             this.DropPanel = new System.Windows.Forms.Panel();
-            this.Step3Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.Step3Label = new System.Windows.Forms.Label();
-            this.Line2 = new System.Windows.Forms.Panel();
-            this.Step2Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.Step2Label = new System.Windows.Forms.Label();
+            this.LinePanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Line1 = new System.Windows.Forms.Panel();
             this.Step1Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.Step1Label = new System.Windows.Forms.Label();
-            this.Tip3Label = new System.Windows.Forms.Label();
-            this.Tip1Label = new System.Windows.Forms.Label();
+            this.Step2Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Step2Label = new System.Windows.Forms.Label();
+            this.Tip4Label = new System.Windows.Forms.Label();
+            this.Line2 = new System.Windows.Forms.Panel();
             this.Tip2Label = new System.Windows.Forms.Label();
+            this.Step4Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Step4Label = new System.Windows.Forms.Label();
+            this.Tip1Label = new System.Windows.Forms.Label();
             this.TipPanel = new System.Windows.Forms.Panel();
-            this.VersionLabel = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.LinePanel = new System.Windows.Forms.Panel();
+            this.Line3 = new System.Windows.Forms.Panel();
+            this.Step3Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Step3Label = new System.Windows.Forms.Label();
+            this.Tip3Label = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.WidthTextBox = new Guna.UI.WinForms.GunaTextBox();
+            this.HeightTextBox = new Guna.UI.WinForms.GunaTextBox();
+            this.WidthLabel = new Guna.UI.WinForms.GunaLabel();
+            this.HeightLabel = new Guna.UI.WinForms.GunaLabel();
+            this.ResizeCheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.SavePropCheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.ShowStepsCheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.UploadProgressBar = new ImageConverter.Controls.ProgressBarControl();
             this.Header.SuspendLayout();
             this.DropPanel.SuspendLayout();
-            this.Step3Panel.SuspendLayout();
-            this.Step2Panel.SuspendLayout();
             this.Step1Panel.SuspendLayout();
+            this.Step2Panel.SuspendLayout();
+            this.Step4Panel.SuspendLayout();
             this.TipPanel.SuspendLayout();
+            this.Step3Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConvertToLabel
             // 
-            this.ConvertToLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ConvertToLabel.AutoSize = true;
-            this.ConvertToLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ConvertToLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.ConvertToLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ConvertToLabel.Location = new System.Drawing.Point(85, 504);
+            this.ConvertToLabel.Location = new System.Drawing.Point(13, 575);
             this.ConvertToLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.ConvertToLabel.Name = "ConvertToLabel";
             this.ConvertToLabel.Size = new System.Drawing.Size(81, 20);
@@ -98,7 +110,6 @@ namespace ImageConverter
             // 
             // ConvertButton
             // 
-            this.ConvertButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ConvertButton.Animated = true;
             this.ConvertButton.AnimationHoverSpeed = 0.07F;
             this.ConvertButton.AnimationSpeed = 0.03F;
@@ -112,7 +123,7 @@ namespace ImageConverter
             this.ConvertButton.ForeColor = System.Drawing.Color.White;
             this.ConvertButton.Image = null;
             this.ConvertButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ConvertButton.Location = new System.Drawing.Point(89, 574);
+            this.ConvertButton.Location = new System.Drawing.Point(414, 630);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.ConvertButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -136,15 +147,15 @@ namespace ImageConverter
             this.ProgramNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProgramNameLabel.BackColor = System.Drawing.Color.LightGray;
-            this.ProgramNameLabel.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProgramNameLabel.Font = new System.Drawing.Font("Cambria", 11.25F);
             this.ProgramNameLabel.ForeColor = System.Drawing.Color.DimGray;
             this.ProgramNameLabel.Location = new System.Drawing.Point(3, 3);
             this.ProgramNameLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.ProgramNameLabel.Name = "ProgramNameLabel";
-            this.ProgramNameLabel.Size = new System.Drawing.Size(591, 20);
+            this.ProgramNameLabel.Size = new System.Drawing.Size(601, 20);
             this.ProgramNameLabel.TabIndex = 15;
-            this.ProgramNameLabel.Text = "Image Format Converter";
-            this.ProgramNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgramNameLabel.Text = " Image Format Converter";
+            this.ProgramNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProgramNameLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // ElipseForm
@@ -159,8 +170,9 @@ namespace ImageConverter
             this.Header.Controls.Add(this.ProgramNameLabel);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
+            this.Header.Margin = new System.Windows.Forms.Padding(0);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(597, 26);
+            this.Header.Size = new System.Drawing.Size(607, 26);
             this.Header.TabIndex = 14;
             // 
             // HideButton
@@ -171,7 +183,7 @@ namespace ImageConverter
             this.HideButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HideButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.HideButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.HideButton.Location = new System.Drawing.Point(547, 0);
+            this.HideButton.Location = new System.Drawing.Point(557, 0);
             this.HideButton.Margin = new System.Windows.Forms.Padding(0);
             this.HideButton.Name = "HideButton";
             this.HideButton.Size = new System.Drawing.Size(24, 21);
@@ -188,7 +200,7 @@ namespace ImageConverter
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CloseButton.Location = new System.Drawing.Point(571, -2);
+            this.CloseButton.Location = new System.Drawing.Point(581, -2);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(23, 25);
@@ -201,7 +213,6 @@ namespace ImageConverter
             // 
             // OpenFolderButton
             // 
-            this.OpenFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenFolderButton.Animated = true;
             this.OpenFolderButton.AnimationHoverSpeed = 0.07F;
             this.OpenFolderButton.AnimationSpeed = 0.03F;
@@ -215,7 +226,7 @@ namespace ImageConverter
             this.OpenFolderButton.ForeColor = System.Drawing.Color.White;
             this.OpenFolderButton.Image = null;
             this.OpenFolderButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.OpenFolderButton.Location = new System.Drawing.Point(190, 574);
+            this.OpenFolderButton.Location = new System.Drawing.Point(286, 630);
             this.OpenFolderButton.Name = "OpenFolderButton";
             this.OpenFolderButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(110)))), ((int)(((byte)(230)))));
             this.OpenFolderButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -267,13 +278,13 @@ namespace ImageConverter
             this.DropLabel.AllowDrop = true;
             this.DropLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DropLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DropLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.DropLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.DropLabel.Location = new System.Drawing.Point(3, 68);
             this.DropLabel.Name = "DropLabel";
             this.DropLabel.Size = new System.Drawing.Size(490, 40);
             this.DropLabel.TabIndex = 6;
-            this.DropLabel.Text = "====== or ======\r\nDrop files here";
+            this.DropLabel.Text = "====== or ======\r\nDrop files here\r\n======    ======";
             this.DropLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.DropLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.DropLabel.DragDrop += new System.Windows.Forms.DragEventHandler(this.DropPanel_DragDrop);
@@ -282,10 +293,9 @@ namespace ImageConverter
             // 
             // CountLabel
             // 
-            this.CountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CountLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CountLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.CountLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CountLabel.Location = new System.Drawing.Point(458, 177);
+            this.CountLabel.Location = new System.Drawing.Point(381, 164);
             this.CountLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.CountLabel.Name = "CountLabel";
             this.CountLabel.Size = new System.Drawing.Size(127, 23);
@@ -301,10 +311,9 @@ namespace ImageConverter
             // ImagePanel
             // 
             this.ImagePanel.AllowDrop = true;
-            this.ImagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImagePanel.AutoScroll = true;
             this.ImagePanel.BackColor = System.Drawing.Color.White;
-            this.ImagePanel.Location = new System.Drawing.Point(89, 203);
+            this.ImagePanel.Location = new System.Drawing.Point(12, 187);
             this.ImagePanel.Name = "ImagePanel";
             this.ImagePanel.Padding = new System.Windows.Forms.Padding(6);
             this.ImagePanel.Size = new System.Drawing.Size(496, 235);
@@ -312,10 +321,10 @@ namespace ImageConverter
             this.ImagePanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImagePanel_DragDrop);
             this.ImagePanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImagePanel_DragEnter);
             this.ImagePanel.DragLeave += new System.EventHandler(this.ImagePanel_DragLeave);
+            this.ImagePanel.MouseEnter += new System.EventHandler(this.ImagePanel_MouseEnter);
             // 
             // ClearAllButton
             // 
-            this.ClearAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearAllButton.Animated = true;
             this.ClearAllButton.AnimationHoverSpeed = 0.07F;
             this.ClearAllButton.AnimationSpeed = 0.03F;
@@ -329,7 +338,7 @@ namespace ImageConverter
             this.ClearAllButton.ForeColor = System.Drawing.Color.White;
             this.ClearAllButton.Image = null;
             this.ClearAllButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ClearAllButton.Location = new System.Drawing.Point(89, 444);
+            this.ClearAllButton.Location = new System.Drawing.Point(410, 440);
             this.ClearAllButton.Name = "ClearAllButton";
             this.ClearAllButton.OnHoverBaseColor = System.Drawing.Color.Red;
             this.ClearAllButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -346,7 +355,6 @@ namespace ImageConverter
             // 
             // ClearSelectedButton
             // 
-            this.ClearSelectedButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearSelectedButton.Animated = true;
             this.ClearSelectedButton.AnimationHoverSpeed = 0.07F;
             this.ClearSelectedButton.AnimationSpeed = 0.03F;
@@ -360,7 +368,7 @@ namespace ImageConverter
             this.ClearSelectedButton.ForeColor = System.Drawing.Color.White;
             this.ClearSelectedButton.Image = null;
             this.ClearSelectedButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ClearSelectedButton.Location = new System.Drawing.Point(190, 444);
+            this.ClearSelectedButton.Location = new System.Drawing.Point(272, 440);
             this.ClearSelectedButton.Name = "ClearSelectedButton";
             this.ClearSelectedButton.OnHoverBaseColor = System.Drawing.Color.Red;
             this.ClearSelectedButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -377,10 +385,9 @@ namespace ImageConverter
             // 
             // SelectedCountLabel
             // 
-            this.SelectedCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectedCountLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectedCountLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.SelectedCountLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SelectedCountLabel.Location = new System.Drawing.Point(89, 177);
+            this.SelectedCountLabel.Location = new System.Drawing.Point(8, 164);
             this.SelectedCountLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.SelectedCountLabel.Name = "SelectedCountLabel";
             this.SelectedCountLabel.Size = new System.Drawing.Size(127, 23);
@@ -391,15 +398,14 @@ namespace ImageConverter
             // 
             // EMFButton
             // 
-            this.EMFButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EMFButton.BaseColor = System.Drawing.SystemColors.Control;
             this.EMFButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.EMFButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.EMFButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EMFButton.FillColor = System.Drawing.Color.White;
-            this.EMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.EMFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.EMFButton.Location = new System.Drawing.Point(232, 504);
+            this.EMFButton.Location = new System.Drawing.Point(160, 577);
             this.EMFButton.Name = "EMFButton";
             this.EMFButton.Size = new System.Drawing.Size(53, 20);
             this.EMFButton.TabIndex = 23;
@@ -408,15 +414,14 @@ namespace ImageConverter
             // 
             // BMPButton
             // 
-            this.BMPButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BMPButton.BaseColor = System.Drawing.SystemColors.Control;
             this.BMPButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.BMPButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.BMPButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BMPButton.FillColor = System.Drawing.Color.White;
-            this.BMPButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BMPButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.BMPButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BMPButton.Location = new System.Drawing.Point(172, 504);
+            this.BMPButton.Location = new System.Drawing.Point(100, 577);
             this.BMPButton.Name = "BMPButton";
             this.BMPButton.Size = new System.Drawing.Size(54, 20);
             this.BMPButton.TabIndex = 24;
@@ -425,15 +430,14 @@ namespace ImageConverter
             // 
             // EXIFButton
             // 
-            this.EXIFButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EXIFButton.BaseColor = System.Drawing.SystemColors.Control;
             this.EXIFButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.EXIFButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.EXIFButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EXIFButton.FillColor = System.Drawing.Color.White;
-            this.EXIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EXIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.EXIFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.EXIFButton.Location = new System.Drawing.Point(291, 504);
+            this.EXIFButton.Location = new System.Drawing.Point(219, 577);
             this.EXIFButton.Name = "EXIFButton";
             this.EXIFButton.Size = new System.Drawing.Size(55, 20);
             this.EXIFButton.TabIndex = 25;
@@ -442,15 +446,14 @@ namespace ImageConverter
             // 
             // GIFButton
             // 
-            this.GIFButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GIFButton.BaseColor = System.Drawing.SystemColors.Control;
             this.GIFButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.GIFButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.GIFButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GIFButton.FillColor = System.Drawing.Color.White;
-            this.GIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.GIFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.GIFButton.Location = new System.Drawing.Point(352, 504);
+            this.GIFButton.Location = new System.Drawing.Point(280, 577);
             this.GIFButton.Name = "GIFButton";
             this.GIFButton.Size = new System.Drawing.Size(49, 20);
             this.GIFButton.TabIndex = 26;
@@ -459,15 +462,14 @@ namespace ImageConverter
             // 
             // ICOButton
             // 
-            this.ICOButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ICOButton.BaseColor = System.Drawing.SystemColors.Control;
             this.ICOButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.ICOButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.ICOButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ICOButton.FillColor = System.Drawing.Color.White;
-            this.ICOButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ICOButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.ICOButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ICOButton.Location = new System.Drawing.Point(407, 504);
+            this.ICOButton.Location = new System.Drawing.Point(335, 577);
             this.ICOButton.Name = "ICOButton";
             this.ICOButton.Size = new System.Drawing.Size(50, 20);
             this.ICOButton.TabIndex = 27;
@@ -476,15 +478,14 @@ namespace ImageConverter
             // 
             // JPEGButton
             // 
-            this.JPEGButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.JPEGButton.BaseColor = System.Drawing.SystemColors.Control;
             this.JPEGButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.JPEGButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.JPEGButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JPEGButton.FillColor = System.Drawing.Color.White;
-            this.JPEGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPEGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.JPEGButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.JPEGButton.Location = new System.Drawing.Point(463, 504);
+            this.JPEGButton.Location = new System.Drawing.Point(391, 577);
             this.JPEGButton.Name = "JPEGButton";
             this.JPEGButton.Size = new System.Drawing.Size(59, 20);
             this.JPEGButton.TabIndex = 28;
@@ -493,15 +494,14 @@ namespace ImageConverter
             // 
             // WMFButton
             // 
-            this.WMFButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WMFButton.BaseColor = System.Drawing.SystemColors.Control;
             this.WMFButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.WMFButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.WMFButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.WMFButton.FillColor = System.Drawing.Color.White;
-            this.WMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.WMFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.WMFButton.Location = new System.Drawing.Point(232, 536);
+            this.WMFButton.Location = new System.Drawing.Point(160, 603);
             this.WMFButton.Name = "WMFButton";
             this.WMFButton.Size = new System.Drawing.Size(56, 20);
             this.WMFButton.TabIndex = 32;
@@ -510,15 +510,14 @@ namespace ImageConverter
             // 
             // PNGButton
             // 
-            this.PNGButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PNGButton.BaseColor = System.Drawing.SystemColors.Control;
             this.PNGButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.PNGButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.PNGButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PNGButton.FillColor = System.Drawing.Color.White;
-            this.PNGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PNGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.PNGButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.PNGButton.Location = new System.Drawing.Point(527, 504);
+            this.PNGButton.Location = new System.Drawing.Point(455, 577);
             this.PNGButton.Name = "PNGButton";
             this.PNGButton.Size = new System.Drawing.Size(54, 20);
             this.PNGButton.TabIndex = 31;
@@ -527,15 +526,14 @@ namespace ImageConverter
             // 
             // TIFFButton
             // 
-            this.TIFFButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TIFFButton.BaseColor = System.Drawing.SystemColors.Control;
             this.TIFFButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.TIFFButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.TIFFButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TIFFButton.FillColor = System.Drawing.Color.White;
-            this.TIFFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TIFFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TIFFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TIFFButton.Location = new System.Drawing.Point(172, 536);
+            this.TIFFButton.Location = new System.Drawing.Point(100, 603);
             this.TIFFButton.Name = "TIFFButton";
             this.TIFFButton.Size = new System.Drawing.Size(54, 20);
             this.TIFFButton.TabIndex = 30;
@@ -545,11 +543,10 @@ namespace ImageConverter
             // DropPanel
             // 
             this.DropPanel.AllowDrop = true;
-            this.DropPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DropPanel.BackColor = System.Drawing.Color.White;
             this.DropPanel.Controls.Add(this.DropLabel);
             this.DropPanel.Controls.Add(this.SelectFilesButton);
-            this.DropPanel.Location = new System.Drawing.Point(89, 45);
+            this.DropPanel.Location = new System.Drawing.Point(12, 38);
             this.DropPanel.Name = "DropPanel";
             this.DropPanel.Size = new System.Drawing.Size(496, 116);
             this.DropPanel.TabIndex = 0;
@@ -557,66 +554,25 @@ namespace ImageConverter
             this.DropPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DropPanel_DragEnter);
             this.DropPanel.DragLeave += new System.EventHandler(this.DropPanel_DragLeave);
             // 
-            // Step3Panel
+            // LinePanel
             // 
-            this.Step3Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Step3Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Step3Panel.BaseColor = System.Drawing.Color.DarkGray;
-            this.Step3Panel.Controls.Add(this.Step3Label);
-            this.Step3Panel.Location = new System.Drawing.Point(17, 507);
-            this.Step3Panel.Name = "Step3Panel";
-            this.Step3Panel.Radius = 20;
-            this.Step3Panel.Size = new System.Drawing.Size(40, 40);
-            this.Step3Panel.TabIndex = 58;
+            this.LinePanel.BackColor = System.Drawing.Color.DarkGray;
+            this.LinePanel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.LinePanel.Location = new System.Drawing.Point(15, 563);
+            this.LinePanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.LinePanel.Name = "LinePanel";
+            this.LinePanel.Size = new System.Drawing.Size(496, 2);
+            this.LinePanel.TabIndex = 21;
             // 
-            // Step3Label
+            // panel1
             // 
-            this.Step3Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Step3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Step3Label.ForeColor = System.Drawing.Color.White;
-            this.Step3Label.Location = new System.Drawing.Point(1, 0);
-            this.Step3Label.Name = "Step3Label";
-            this.Step3Label.Size = new System.Drawing.Size(40, 40);
-            this.Step3Label.TabIndex = 2;
-            this.Step3Label.Text = "3";
-            this.Step3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Line2
-            // 
-            this.Line2.BackColor = System.Drawing.Color.DarkGray;
-            this.Line2.Location = new System.Drawing.Point(35, 191);
-            this.Line2.Margin = new System.Windows.Forms.Padding(0);
-            this.Line2.Name = "Line2";
-            this.Line2.Size = new System.Drawing.Size(2, 260);
-            this.Line2.TabIndex = 57;
-            // 
-            // Step2Panel
-            // 
-            this.Step2Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Step2Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Step2Panel.BaseColor = System.Drawing.Color.DarkGray;
-            this.Step2Panel.Controls.Add(this.Step2Label);
-            this.Step2Panel.Location = new System.Drawing.Point(17, 151);
-            this.Step2Panel.Name = "Step2Panel";
-            this.Step2Panel.Radius = 20;
-            this.Step2Panel.Size = new System.Drawing.Size(40, 40);
-            this.Step2Panel.TabIndex = 56;
-            // 
-            // Step2Label
-            // 
-            this.Step2Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Step2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Step2Label.ForeColor = System.Drawing.Color.White;
-            this.Step2Label.Location = new System.Drawing.Point(1, 0);
-            this.Step2Label.Name = "Step2Label";
-            this.Step2Label.Size = new System.Drawing.Size(40, 40);
-            this.Step2Label.TabIndex = 1;
-            this.Step2Label.Text = "2";
-            this.Step2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Location = new System.Drawing.Point(12, 161);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(496, 2);
+            this.panel1.TabIndex = 22;
             // 
             // Line1
             // 
@@ -644,7 +600,7 @@ namespace ImageConverter
             // 
             this.Step1Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Step1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Step1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.Step1Label.ForeColor = System.Drawing.Color.White;
             this.Step1Label.Location = new System.Drawing.Point(1, 0);
             this.Step1Label.Name = "Step1Label";
@@ -653,31 +609,53 @@ namespace ImageConverter
             this.Step1Label.Text = "1";
             this.Step1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Tip3Label
+            // Step2Panel
             // 
-            this.Tip3Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Step2Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tip3Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.Tip3Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Tip3Label.Location = new System.Drawing.Point(0, 451);
-            this.Tip3Label.Name = "Tip3Label";
-            this.Tip3Label.Size = new System.Drawing.Size(75, 53);
-            this.Tip3Label.TabIndex = 61;
-            this.Tip3Label.Text = "Select format and Convert";
-            this.Tip3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Step2Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Step2Panel.BaseColor = System.Drawing.Color.DarkGray;
+            this.Step2Panel.Controls.Add(this.Step2Label);
+            this.Step2Panel.Location = new System.Drawing.Point(17, 151);
+            this.Step2Panel.Name = "Step2Panel";
+            this.Step2Panel.Radius = 20;
+            this.Step2Panel.Size = new System.Drawing.Size(40, 40);
+            this.Step2Panel.TabIndex = 56;
             // 
-            // Tip1Label
+            // Step2Label
             // 
-            this.Tip1Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Step2Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tip1Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.Tip1Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
-            this.Tip1Label.Location = new System.Drawing.Point(0, 0);
-            this.Tip1Label.Name = "Tip1Label";
-            this.Tip1Label.Size = new System.Drawing.Size(75, 23);
-            this.Tip1Label.TabIndex = 60;
-            this.Tip1Label.Text = "Select files";
-            this.Tip1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Step2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Step2Label.ForeColor = System.Drawing.Color.White;
+            this.Step2Label.Location = new System.Drawing.Point(1, 0);
+            this.Step2Label.Name = "Step2Label";
+            this.Step2Label.Size = new System.Drawing.Size(40, 40);
+            this.Step2Label.TabIndex = 1;
+            this.Step2Label.Text = "2";
+            this.Step2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Tip4Label
+            // 
+            this.Tip4Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tip4Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Tip4Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Tip4Label.Location = new System.Drawing.Point(0, 543);
+            this.Tip4Label.Name = "Tip4Label";
+            this.Tip4Label.Size = new System.Drawing.Size(75, 53);
+            this.Tip4Label.TabIndex = 61;
+            this.Tip4Label.Text = "Select format and Convert";
+            this.Tip4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Line2
+            // 
+            this.Line2.BackColor = System.Drawing.Color.DarkGray;
+            this.Line2.Location = new System.Drawing.Point(35, 191);
+            this.Line2.Margin = new System.Windows.Forms.Padding(0);
+            this.Line2.Name = "Line2";
+            this.Line2.Size = new System.Drawing.Size(2, 260);
+            this.Line2.TabIndex = 57;
             // 
             // Tip2Label
             // 
@@ -692,67 +670,278 @@ namespace ImageConverter
             this.Tip2Label.Text = "Edit List";
             this.Tip2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Step4Panel
+            // 
+            this.Step4Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Step4Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Step4Panel.BaseColor = System.Drawing.Color.DarkGray;
+            this.Step4Panel.Controls.Add(this.Step4Label);
+            this.Step4Panel.Location = new System.Drawing.Point(17, 596);
+            this.Step4Panel.Name = "Step4Panel";
+            this.Step4Panel.Radius = 20;
+            this.Step4Panel.Size = new System.Drawing.Size(40, 40);
+            this.Step4Panel.TabIndex = 58;
+            // 
+            // Step4Label
+            // 
+            this.Step4Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Step4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Step4Label.ForeColor = System.Drawing.Color.White;
+            this.Step4Label.Location = new System.Drawing.Point(1, 0);
+            this.Step4Label.Name = "Step4Label";
+            this.Step4Label.Size = new System.Drawing.Size(40, 40);
+            this.Step4Label.TabIndex = 2;
+            this.Step4Label.Text = "4";
+            this.Step4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Tip1Label
+            // 
+            this.Tip1Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tip1Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Tip1Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
+            this.Tip1Label.Location = new System.Drawing.Point(0, 0);
+            this.Tip1Label.Name = "Tip1Label";
+            this.Tip1Label.Size = new System.Drawing.Size(75, 23);
+            this.Tip1Label.TabIndex = 60;
+            this.Tip1Label.Text = "Select files";
+            this.Tip1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TipPanel
             // 
             this.TipPanel.BackColor = System.Drawing.Color.Transparent;
-            this.TipPanel.Controls.Add(this.Tip1Label);
+            this.TipPanel.Controls.Add(this.Line3);
             this.TipPanel.Controls.Add(this.Step3Panel);
+            this.TipPanel.Controls.Add(this.Tip3Label);
+            this.TipPanel.Controls.Add(this.Tip1Label);
+            this.TipPanel.Controls.Add(this.Step4Panel);
             this.TipPanel.Controls.Add(this.Tip2Label);
             this.TipPanel.Controls.Add(this.Line2);
-            this.TipPanel.Controls.Add(this.Tip3Label);
+            this.TipPanel.Controls.Add(this.Tip4Label);
             this.TipPanel.Controls.Add(this.Step2Panel);
             this.TipPanel.Controls.Add(this.Step1Panel);
             this.TipPanel.Controls.Add(this.Line1);
-            this.TipPanel.Location = new System.Drawing.Point(8, 40);
+            this.TipPanel.Location = new System.Drawing.Point(520, 34);
             this.TipPanel.Name = "TipPanel";
-            this.TipPanel.Size = new System.Drawing.Size(75, 576);
+            this.TipPanel.Size = new System.Drawing.Size(75, 641);
             this.TipPanel.TabIndex = 3;
             // 
-            // VersionLabel
+            // Line3
             // 
-            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Line3.BackColor = System.Drawing.Color.DarkGray;
+            this.Line3.Location = new System.Drawing.Point(37, 517);
+            this.Line3.Margin = new System.Windows.Forms.Padding(0);
+            this.Line3.Name = "Line3";
+            this.Line3.Size = new System.Drawing.Size(2, 14);
+            this.Line3.TabIndex = 58;
+            // 
+            // Step3Panel
+            // 
+            this.Step3Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VersionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VersionLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.VersionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.VersionLabel.Location = new System.Drawing.Point(444, 574);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(137, 42);
-            this.VersionLabel.TabIndex = 62;
-            this.VersionLabel.Text = "GitHub: qlulp\r\nVersion: v1.0.0";
-            this.VersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.VersionLabel.Click += new System.EventHandler(this.VersionLabel_Click);
+            this.Step3Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Step3Panel.BaseColor = System.Drawing.Color.DarkGray;
+            this.Step3Panel.Controls.Add(this.Step3Label);
+            this.Step3Panel.Location = new System.Drawing.Point(18, 477);
+            this.Step3Panel.Name = "Step3Panel";
+            this.Step3Panel.Radius = 20;
+            this.Step3Panel.Size = new System.Drawing.Size(40, 40);
+            this.Step3Panel.TabIndex = 62;
             // 
-            // panel3
+            // Step3Label
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel3.Location = new System.Drawing.Point(89, 167);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(496, 2);
-            this.panel3.TabIndex = 43;
+            this.Step3Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Step3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Step3Label.ForeColor = System.Drawing.Color.White;
+            this.Step3Label.Location = new System.Drawing.Point(1, 0);
+            this.Step3Label.Name = "Step3Label";
+            this.Step3Label.Size = new System.Drawing.Size(40, 40);
+            this.Step3Label.TabIndex = 2;
+            this.Step3Label.Text = "3";
+            this.Step3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LinePanel
+            // Tip3Label
             // 
-            this.LinePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LinePanel.BackColor = System.Drawing.Color.DarkGray;
-            this.LinePanel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LinePanel.Location = new System.Drawing.Point(87, 492);
-            this.LinePanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.LinePanel.Name = "LinePanel";
-            this.LinePanel.Size = new System.Drawing.Size(496, 2);
-            this.LinePanel.TabIndex = 21;
+            this.Tip3Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tip3Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Tip3Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Tip3Label.Location = new System.Drawing.Point(1, 451);
+            this.Tip3Label.Name = "Tip3Label";
+            this.Tip3Label.Size = new System.Drawing.Size(75, 23);
+            this.Tip3Label.TabIndex = 63;
+            this.Tip3Label.Text = "Resize";
+            this.Tip3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Location = new System.Drawing.Point(17, 491);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(496, 2);
+            this.panel2.TabIndex = 22;
+            // 
+            // WidthTextBox
+            // 
+            this.WidthTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.WidthTextBox.BaseColor = System.Drawing.Color.White;
+            this.WidthTextBox.BorderColor = System.Drawing.Color.Silver;
+            this.WidthTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.WidthTextBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.WidthTextBox.FocusedBorderColor = System.Drawing.Color.Silver;
+            this.WidthTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.WidthTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.WidthTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.WidthTextBox.Location = new System.Drawing.Point(427, 499);
+            this.WidthTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.PasswordChar = '\0';
+            this.WidthTextBox.Radius = 12;
+            this.WidthTextBox.SelectedText = "";
+            this.WidthTextBox.Size = new System.Drawing.Size(73, 26);
+            this.WidthTextBox.TabIndex = 66;
+            this.WidthTextBox.Text = "10";
+            this.WidthTextBox.TextOffsetX = 4;
+            this.WidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
+            this.WidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthTextBox_KeyPress);
+            // 
+            // HeightTextBox
+            // 
+            this.HeightTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.HeightTextBox.BaseColor = System.Drawing.Color.White;
+            this.HeightTextBox.BorderColor = System.Drawing.Color.Silver;
+            this.HeightTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.HeightTextBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.HeightTextBox.FocusedBorderColor = System.Drawing.Color.Silver;
+            this.HeightTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.HeightTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.HeightTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.HeightTextBox.Location = new System.Drawing.Point(427, 529);
+            this.HeightTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.PasswordChar = '\0';
+            this.HeightTextBox.Radius = 12;
+            this.HeightTextBox.SelectedText = "";
+            this.HeightTextBox.Size = new System.Drawing.Size(73, 26);
+            this.HeightTextBox.TabIndex = 69;
+            this.HeightTextBox.Text = "10";
+            this.HeightTextBox.TextOffsetX = 4;
+            this.HeightTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
+            this.HeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthTextBox_KeyPress);
+            this.HeightTextBox.MouseLeave += new System.EventHandler(this.HeightTextBox_MouseLeave);
+            // 
+            // WidthLabel
+            // 
+            this.WidthLabel.AutoSize = true;
+            this.WidthLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.WidthLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.WidthLabel.Location = new System.Drawing.Point(338, 503);
+            this.WidthLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.WidthLabel.Name = "WidthLabel";
+            this.WidthLabel.Size = new System.Drawing.Size(81, 20);
+            this.WidthLabel.TabIndex = 70;
+            this.WidthLabel.Text = "Max width:";
+            this.WidthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WidthLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            // 
+            // HeightLabel
+            // 
+            this.HeightLabel.AutoSize = true;
+            this.HeightLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.HeightLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.HeightLabel.Location = new System.Drawing.Point(338, 531);
+            this.HeightLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(86, 20);
+            this.HeightLabel.TabIndex = 71;
+            this.HeightLabel.Text = "Max height:";
+            this.HeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HeightLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            // 
+            // ResizeCheckBox
+            // 
+            this.ResizeCheckBox.BaseColor = System.Drawing.Color.White;
+            this.ResizeCheckBox.CheckedOffColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ResizeCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.ResizeCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ResizeCheckBox.FillColor = System.Drawing.Color.White;
+            this.ResizeCheckBox.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.ResizeCheckBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ResizeCheckBox.Location = new System.Drawing.Point(17, 499);
+            this.ResizeCheckBox.Name = "ResizeCheckBox";
+            this.ResizeCheckBox.Size = new System.Drawing.Size(196, 24);
+            this.ResizeCheckBox.TabIndex = 0;
+            this.ResizeCheckBox.Text = "Resize all output images";
+            this.ResizeCheckBox.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            this.ResizeCheckBox.CheckedChanged += new System.EventHandler(this.ResizeCheckBox_CheckedChanged);
+            // 
+            // SavePropCheckBox
+            // 
+            this.SavePropCheckBox.BaseColor = System.Drawing.Color.White;
+            this.SavePropCheckBox.CheckedOffColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.SavePropCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.SavePropCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SavePropCheckBox.FillColor = System.Drawing.Color.White;
+            this.SavePropCheckBox.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.SavePropCheckBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.SavePropCheckBox.Location = new System.Drawing.Point(17, 527);
+            this.SavePropCheckBox.Name = "SavePropCheckBox";
+            this.SavePropCheckBox.Size = new System.Drawing.Size(147, 24);
+            this.SavePropCheckBox.TabIndex = 72;
+            this.SavePropCheckBox.Text = "Save proportions";
+            this.SavePropCheckBox.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            this.SavePropCheckBox.CheckedChanged += new System.EventHandler(this.SavePropCheckBox_CheckedChanged);
+            // 
+            // ShowStepsCheckBox
+            // 
+            this.ShowStepsCheckBox.BaseColor = System.Drawing.Color.White;
+            this.ShowStepsCheckBox.Checked = true;
+            this.ShowStepsCheckBox.CheckedOffColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ShowStepsCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.ShowStepsCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowStepsCheckBox.FillColor = System.Drawing.Color.White;
+            this.ShowStepsCheckBox.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.ShowStepsCheckBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ShowStepsCheckBox.Location = new System.Drawing.Point(12, 651);
+            this.ShowStepsCheckBox.Name = "ShowStepsCheckBox";
+            this.ShowStepsCheckBox.Size = new System.Drawing.Size(150, 24);
+            this.ShowStepsCheckBox.TabIndex = 73;
+            this.ShowStepsCheckBox.Text = "Show steps panel";
+            this.ShowStepsCheckBox.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            this.ShowStepsCheckBox.CheckedChanged += new System.EventHandler(this.ShowStepsCheckBox_CheckedChanged);
+            // 
+            // UploadProgressBar
+            // 
+            this.UploadProgressBar.BackColor = System.Drawing.Color.White;
+            this.UploadProgressBar.FrontColor = System.Drawing.Color.BlueViolet;
+            this.UploadProgressBar.Location = new System.Drawing.Point(12, 428);
+            this.UploadProgressBar.MaxValue = 100;
+            this.UploadProgressBar.Name = "UploadProgressBar";
+            this.UploadProgressBar.Size = new System.Drawing.Size(496, 5);
+            this.UploadProgressBar.TabIndex = 0;
+            this.UploadProgressBar.Value = 0;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(597, 628);
-            this.Controls.Add(this.VersionLabel);
+            this.ClientSize = new System.Drawing.Size(607, 684);
+            this.Controls.Add(this.UploadProgressBar);
+            this.Controls.Add(this.ShowStepsCheckBox);
+            this.Controls.Add(this.SavePropCheckBox);
+            this.Controls.Add(this.ResizeCheckBox);
+            this.Controls.Add(this.HeightLabel);
+            this.Controls.Add(this.WidthLabel);
+            this.Controls.Add(this.HeightTextBox);
+            this.Controls.Add(this.WidthTextBox);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TipPanel);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.DropPanel);
             this.Controls.Add(this.WMFButton);
             this.Controls.Add(this.PNGButton);
@@ -773,17 +962,18 @@ namespace ImageConverter
             this.Controls.Add(this.Header);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.ConvertToLabel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.DropPanel.ResumeLayout(false);
-            this.Step3Panel.ResumeLayout(false);
-            this.Step2Panel.ResumeLayout(false);
             this.Step1Panel.ResumeLayout(false);
+            this.Step2Panel.ResumeLayout(false);
+            this.Step4Panel.ResumeLayout(false);
             this.TipPanel.ResumeLayout(false);
+            this.Step3Panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,21 +1007,33 @@ namespace ImageConverter
         private Guna.UI.WinForms.GunaRadioButton PNGButton;
         private Guna.UI.WinForms.GunaRadioButton TIFFButton;
         private System.Windows.Forms.Panel DropPanel;
-        private Guna.UI.WinForms.GunaElipsePanel Step3Panel;
-        private System.Windows.Forms.Label Step3Label;
+        private System.Windows.Forms.Panel LinePanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel TipPanel;
+        private System.Windows.Forms.Label Tip1Label;
+        private Guna.UI.WinForms.GunaElipsePanel Step4Panel;
+        private System.Windows.Forms.Label Step4Label;
+        private System.Windows.Forms.Label Tip2Label;
         private System.Windows.Forms.Panel Line2;
+        private System.Windows.Forms.Label Tip4Label;
         private Guna.UI.WinForms.GunaElipsePanel Step2Panel;
         private System.Windows.Forms.Label Step2Label;
-        private System.Windows.Forms.Panel Line1;
         private Guna.UI.WinForms.GunaElipsePanel Step1Panel;
         private System.Windows.Forms.Label Step1Label;
+        private System.Windows.Forms.Panel Line1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaTextBox WidthTextBox;
+        private Guna.UI.WinForms.GunaLabel WidthLabel;
+        private Guna.UI.WinForms.GunaTextBox HeightTextBox;
+        private Guna.UI.WinForms.GunaLabel HeightLabel;
+        private Guna.UI.WinForms.GunaCheckBox ResizeCheckBox;
+        private System.Windows.Forms.Panel Line3;
+        private Guna.UI.WinForms.GunaElipsePanel Step3Panel;
+        private System.Windows.Forms.Label Step3Label;
         private System.Windows.Forms.Label Tip3Label;
-        private System.Windows.Forms.Label Tip1Label;
-        private System.Windows.Forms.Label Tip2Label;
-        private System.Windows.Forms.Panel TipPanel;
-        private System.Windows.Forms.Label VersionLabel;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel LinePanel;
+        private Guna.UI.WinForms.GunaCheckBox SavePropCheckBox;
+        private Guna.UI.WinForms.GunaCheckBox ShowStepsCheckBox;
+        private Controls.ProgressBarControl UploadProgressBar;
     }
 }
 

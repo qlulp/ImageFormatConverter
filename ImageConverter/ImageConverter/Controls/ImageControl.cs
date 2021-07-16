@@ -15,6 +15,8 @@ namespace ImageConverter.Controls
             set => CurrentPictureBox.Image = value;
         }
         public Action OnIsSelectedValueChanged { get; set; }
+        public string Path { get; internal set; } = @"";
+
         public ImageControl()
         {
             InitializeComponent();

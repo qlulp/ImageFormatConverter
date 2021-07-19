@@ -29,7 +29,7 @@ v1.1.0 features:
 - added gradient status bar
 - updated user interface
 - added the ability to resize images
-- Optimized image preview (you can safely work with up to 500 images)
+- Optimized image preview (you can safely work with up to 1000 images)
 - added the ability to resize images while maintaining proportions
 - Added the ability to hide the step bar
 - changed application logic

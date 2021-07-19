@@ -1,7 +1,7 @@
 # Image Format Converter
 ## Lightweight, сonvenient and easy to use image format converter tool
 
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/v1.1.0%20screenshot.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.1.0.JPG?raw=true)
 
 # Overview
 
@@ -28,22 +28,32 @@ v1.1.0 features:
 - added computing in the background (multithreading)
 - added gradient status bar
 - updated user interface
+- added a button to hide the step bar
 - added the ability to resize images
-- Optimized image preview (you can safely work with up to 500 images)
+- Optimized image preview (you can safely work with up to 1000 images)
 - added the ability to resize images while maintaining proportions
 - Added the ability to hide the step bar
 - changed application logic
 - mnor bugs fixed
 
+v1.2.0 features:
+- created output window (MesageBox)
+- added dark theme
+- fixed display of the step bar
+
 # Screenshots
 
 v1.0.0
 
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/screenshot.jpg?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.0.0.jpg?raw=true)
 
 v1.1.0
 
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/v1.1.0%20screenshot.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.1.0.JPG?raw=true)
+
+v1.2.0
+
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.2.0.JPG?raw=true)
 
 
 # Download

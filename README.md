@@ -2,7 +2,7 @@
 ## Lightweight, сonvenient and easy to use image format converter tool
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.1.JPG?raw=true)
 
 # Overview
 

@@ -1,7 +1,8 @@
 # Image Format Converter
 ## Lightweight, сonvenient and easy to use image format converter tool
 
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.1.0.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
 
 # Overview
 
@@ -41,6 +42,14 @@ v1.2.0 features:
 - added dark theme
 - fixed display of the step bar
 
+v1.3.0 features:
+- added settings window
+- added ability to change theme
+- added ability to auto open folder
+- added ability to save old image names
+- added ability to hide application in task bar
+- other minor changes
+
 # Screenshots
 
 v1.0.0
@@ -55,7 +64,10 @@ v1.2.0
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.2.0.JPG?raw=true)
 
+v1.3.0
 
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
 # Download
 
 -

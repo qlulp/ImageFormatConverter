@@ -68,7 +68,3 @@ v1.3.0
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
-# Download
-
--
--

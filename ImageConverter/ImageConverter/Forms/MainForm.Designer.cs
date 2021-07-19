@@ -66,7 +66,6 @@ namespace ImageConverter
             this.FormHeader = new ImageConverter.Controls.Header();
             this.UploadProgressBar = new ImageConverter.Controls.ProgressBarControl();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.CurrentImageNunLabel = new System.Windows.Forms.Label();
             this.DropPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +74,7 @@ namespace ImageConverter
             this.ConvertToLabel.AutoSize = true;
             this.ConvertToLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.ConvertToLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ConvertToLabel.Location = new System.Drawing.Point(13, 575);
+            this.ConvertToLabel.Location = new System.Drawing.Point(7, 578);
             this.ConvertToLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.ConvertToLabel.Name = "ConvertToLabel";
             this.ConvertToLabel.Size = new System.Drawing.Size(81, 20);
@@ -89,7 +88,7 @@ namespace ImageConverter
             this.ConvertButton.AnimationHoverSpeed = 0.07F;
             this.ConvertButton.AnimationSpeed = 0.03F;
             this.ConvertButton.BackColor = System.Drawing.Color.Transparent;
-            this.ConvertButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(83)))), ((int)(((byte)(163)))));
+            this.ConvertButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(73)))), ((int)(((byte)(153)))));
             this.ConvertButton.BorderColor = System.Drawing.Color.Black;
             this.ConvertButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConvertButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -98,7 +97,7 @@ namespace ImageConverter
             this.ConvertButton.ForeColor = System.Drawing.Color.White;
             this.ConvertButton.Image = null;
             this.ConvertButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.ConvertButton.Location = new System.Drawing.Point(414, 629);
+            this.ConvertButton.Location = new System.Drawing.Point(413, 635);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.ConvertButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -123,7 +122,7 @@ namespace ImageConverter
             this.OpenFolderButton.AnimationHoverSpeed = 0.07F;
             this.OpenFolderButton.AnimationSpeed = 0.03F;
             this.OpenFolderButton.BackColor = System.Drawing.Color.Transparent;
-            this.OpenFolderButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(123)))), ((int)(((byte)(203)))));
+            this.OpenFolderButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
             this.OpenFolderButton.BorderColor = System.Drawing.Color.Black;
             this.OpenFolderButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenFolderButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -132,7 +131,7 @@ namespace ImageConverter
             this.OpenFolderButton.ForeColor = System.Drawing.Color.White;
             this.OpenFolderButton.Image = null;
             this.OpenFolderButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.OpenFolderButton.Location = new System.Drawing.Point(287, 629);
+            this.OpenFolderButton.Location = new System.Drawing.Point(286, 635);
             this.OpenFolderButton.Name = "OpenFolderButton";
             this.OpenFolderButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(110)))), ((int)(((byte)(230)))));
             this.OpenFolderButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -306,7 +305,7 @@ namespace ImageConverter
             this.EMFButton.FillColor = System.Drawing.Color.White;
             this.EMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.EMFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.EMFButton.Location = new System.Drawing.Point(160, 577);
+            this.EMFButton.Location = new System.Drawing.Point(154, 580);
             this.EMFButton.Name = "EMFButton";
             this.EMFButton.Size = new System.Drawing.Size(53, 20);
             this.EMFButton.TabIndex = 23;
@@ -323,7 +322,7 @@ namespace ImageConverter
             this.BMPButton.FillColor = System.Drawing.Color.White;
             this.BMPButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.BMPButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BMPButton.Location = new System.Drawing.Point(100, 577);
+            this.BMPButton.Location = new System.Drawing.Point(94, 580);
             this.BMPButton.Name = "BMPButton";
             this.BMPButton.Size = new System.Drawing.Size(54, 20);
             this.BMPButton.TabIndex = 24;
@@ -339,7 +338,7 @@ namespace ImageConverter
             this.EXIFButton.FillColor = System.Drawing.Color.White;
             this.EXIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.EXIFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.EXIFButton.Location = new System.Drawing.Point(219, 577);
+            this.EXIFButton.Location = new System.Drawing.Point(213, 580);
             this.EXIFButton.Name = "EXIFButton";
             this.EXIFButton.Size = new System.Drawing.Size(55, 20);
             this.EXIFButton.TabIndex = 25;
@@ -355,7 +354,7 @@ namespace ImageConverter
             this.GIFButton.FillColor = System.Drawing.Color.White;
             this.GIFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.GIFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.GIFButton.Location = new System.Drawing.Point(280, 577);
+            this.GIFButton.Location = new System.Drawing.Point(274, 580);
             this.GIFButton.Name = "GIFButton";
             this.GIFButton.Size = new System.Drawing.Size(49, 20);
             this.GIFButton.TabIndex = 26;
@@ -371,7 +370,7 @@ namespace ImageConverter
             this.ICOButton.FillColor = System.Drawing.Color.White;
             this.ICOButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.ICOButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ICOButton.Location = new System.Drawing.Point(335, 577);
+            this.ICOButton.Location = new System.Drawing.Point(329, 580);
             this.ICOButton.Name = "ICOButton";
             this.ICOButton.Size = new System.Drawing.Size(50, 20);
             this.ICOButton.TabIndex = 27;
@@ -387,7 +386,7 @@ namespace ImageConverter
             this.JPEGButton.FillColor = System.Drawing.Color.White;
             this.JPEGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.JPEGButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.JPEGButton.Location = new System.Drawing.Point(391, 577);
+            this.JPEGButton.Location = new System.Drawing.Point(385, 580);
             this.JPEGButton.Name = "JPEGButton";
             this.JPEGButton.Size = new System.Drawing.Size(59, 20);
             this.JPEGButton.TabIndex = 28;
@@ -403,7 +402,7 @@ namespace ImageConverter
             this.WMFButton.FillColor = System.Drawing.Color.White;
             this.WMFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.WMFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.WMFButton.Location = new System.Drawing.Point(160, 603);
+            this.WMFButton.Location = new System.Drawing.Point(154, 606);
             this.WMFButton.Name = "WMFButton";
             this.WMFButton.Size = new System.Drawing.Size(56, 20);
             this.WMFButton.TabIndex = 32;
@@ -419,7 +418,7 @@ namespace ImageConverter
             this.PNGButton.FillColor = System.Drawing.Color.White;
             this.PNGButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.PNGButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.PNGButton.Location = new System.Drawing.Point(455, 577);
+            this.PNGButton.Location = new System.Drawing.Point(449, 580);
             this.PNGButton.Name = "PNGButton";
             this.PNGButton.Size = new System.Drawing.Size(54, 20);
             this.PNGButton.TabIndex = 31;
@@ -435,7 +434,7 @@ namespace ImageConverter
             this.TIFFButton.FillColor = System.Drawing.Color.White;
             this.TIFFButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TIFFButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TIFFButton.Location = new System.Drawing.Point(100, 603);
+            this.TIFFButton.Location = new System.Drawing.Point(94, 606);
             this.TIFFButton.Name = "TIFFButton";
             this.TIFFButton.Size = new System.Drawing.Size(54, 20);
             this.TIFFButton.TabIndex = 30;
@@ -573,7 +572,7 @@ namespace ImageConverter
             this.SettingsButton.AnimationHoverSpeed = 0.07F;
             this.SettingsButton.AnimationSpeed = 0.03F;
             this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
-            this.SettingsButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(123)))), ((int)(((byte)(203)))));
+            this.SettingsButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(123)))), ((int)(((byte)(203)))));
             this.SettingsButton.BorderColor = System.Drawing.Color.Black;
             this.SettingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SettingsButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -582,15 +581,15 @@ namespace ImageConverter
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
             this.SettingsButton.Image = null;
             this.SettingsButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.SettingsButton.Location = new System.Drawing.Point(160, 629);
+            this.SettingsButton.Location = new System.Drawing.Point(172, 635);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(110)))), ((int)(((byte)(230)))));
+            this.SettingsButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(93)))), ((int)(((byte)(203)))));
             this.SettingsButton.OnHoverBorderColor = System.Drawing.Color.Black;
             this.SettingsButton.OnHoverForeColor = System.Drawing.Color.White;
             this.SettingsButton.OnHoverImage = null;
             this.SettingsButton.OnPressedColor = System.Drawing.Color.Black;
             this.SettingsButton.Radius = 14;
-            this.SettingsButton.Size = new System.Drawing.Size(121, 42);
+            this.SettingsButton.Size = new System.Drawing.Size(108, 42);
             this.SettingsButton.TabIndex = 80;
             this.SettingsButton.Text = "Settings";
             this.SettingsButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -664,30 +663,19 @@ namespace ImageConverter
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.gunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gunaLabel1.Location = new System.Drawing.Point(12, 629);
+            this.gunaLabel1.Location = new System.Drawing.Point(12, 637);
             this.gunaLabel1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(102, 40);
             this.gunaLabel1.TabIndex = 81;
-            this.gunaLabel1.Text = "GitHub: qlulp\r\nVersion: v1.3.0";
+            this.gunaLabel1.Text = "GitHub: qlulp\r\nVersion: v1.3.1";
             this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // CurrentImageNunLabel
-            // 
-            this.CurrentImageNunLabel.AutoSize = true;
-            this.CurrentImageNunLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.CurrentImageNunLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CurrentImageNunLabel.Location = new System.Drawing.Point(8, 436);
-            this.CurrentImageNunLabel.Name = "CurrentImageNunLabel";
-            this.CurrentImageNunLabel.Size = new System.Drawing.Size(0, 20);
-            this.CurrentImageNunLabel.TabIndex = 82;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(607, 684);
-            this.Controls.Add(this.CurrentImageNunLabel);
+            this.ClientSize = new System.Drawing.Size(607, 689);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.StepSidePanel);
@@ -769,7 +757,6 @@ namespace ImageConverter
         private Controls.StepsPanel StepSidePanel;
         private Guna.UI.WinForms.GunaButton SettingsButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.Label CurrentImageNunLabel;
     }
 }
 

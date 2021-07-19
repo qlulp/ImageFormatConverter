@@ -35,7 +35,7 @@ namespace ImageConverter.Controls
             set
             {
                 if (value >= 0)
-                    BorderPanel.Padding = new Padding(value, value, value + 1, value + 1);
+                    BorderPanel.Padding = new Padding(value);
             }
         }
 
@@ -57,6 +57,21 @@ namespace ImageConverter.Controls
                 Panel4.BaseColor = Color.Brown;
                 BorderPanel.BaseColor = CurrentTheme.LineColor;
             }
+        }
+
+        private void Control_MouseEnter(object sender, EventArgs e)
+        {
+            BorderPanel.BaseColor = CurrentTheme.ActiveColor;
+        }
+
+        private void Control_MouseLeave(object sender, EventArgs e)
+        {
+            BorderPanel.BaseColor = CurrentTheme.LineColor;
+        }
+
+        private void Control_Click(object sender, EventArgs e)
+        {
+            this.InvokeOnClick(this, EventArgs.Empty);
         }
     }
 }

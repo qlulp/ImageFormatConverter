@@ -66,6 +66,7 @@
     <Compile Include="Classes\Configuration.cs" />
     <Compile Include="Classes\Manager.cs" />
     <Compile Include="Classes\Themes\DarkTheme.cs" />
+    <Compile Include="Classes\Themes\WhiteTheme.cs" />
     <Compile Include="Classes\Themes\LightTheme.cs" />
     <Compile Include="Classes\Themes\Theme.cs" />
     <Compile Include="Controls\Header.cs">

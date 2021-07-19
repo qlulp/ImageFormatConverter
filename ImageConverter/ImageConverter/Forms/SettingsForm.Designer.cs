@@ -44,9 +44,11 @@ namespace ImageConverter.Forms
             this.AutoOpenFolder = new Guna.UI.WinForms.GunaCheckBox();
             this.DarkRadioButton = new Guna.UI.WinForms.GunaRadioButton();
             this.ShowStepsPanel = new Guna.UI.WinForms.GunaCheckBox();
-            this.DarkThemePreview = new ImageConverter.Controls.ThemePreview();
+            this.WhiteRadioButton = new Guna.UI.WinForms.GunaRadioButton();
             this.LightThemePreview = new ImageConverter.Controls.ThemePreview();
-            this.header1 = new ImageConverter.Controls.Header();
+            this.WhiteThemePreview = new ImageConverter.Controls.ThemePreview();
+            this.DarkThemePreview = new ImageConverter.Controls.ThemePreview();
+            this.FormHeader = new ImageConverter.Controls.Header();
             this.SuspendLayout();
             // 
             // ElipseForm
@@ -69,7 +71,7 @@ namespace ImageConverter.Forms
             this.SaveButton.ForeColor = System.Drawing.Color.White;
             this.SaveButton.Image = null;
             this.SaveButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.SaveButton.Location = new System.Drawing.Point(231, 393);
+            this.SaveButton.Location = new System.Drawing.Point(156, 393);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(148)))));
             this.SaveButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,7 +91,7 @@ namespace ImageConverter.Forms
             this.ThemeLabel.AutoSize = true;
             this.ThemeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.ThemeLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ThemeLabel.Location = new System.Drawing.Point(12, 35);
+            this.ThemeLabel.Location = new System.Drawing.Point(8, 35);
             this.ThemeLabel.Name = "ThemeLabel";
             this.ThemeLabel.Size = new System.Drawing.Size(61, 20);
             this.ThemeLabel.TabIndex = 76;
@@ -104,7 +106,7 @@ namespace ImageConverter.Forms
             this.LightRadioButton.FillColor = System.Drawing.Color.White;
             this.LightRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.LightRadioButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LightRadioButton.Location = new System.Drawing.Point(33, 180);
+            this.LightRadioButton.Location = new System.Drawing.Point(29, 180);
             this.LightRadioButton.Name = "LightRadioButton";
             this.LightRadioButton.Size = new System.Drawing.Size(55, 20);
             this.LightRadioButton.TabIndex = 83;
@@ -138,7 +140,7 @@ namespace ImageConverter.Forms
             this.CancelButton.ForeColor = System.Drawing.Color.White;
             this.CancelButton.Image = null;
             this.CancelButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.CancelButton.Location = new System.Drawing.Point(130, 393);
+            this.CancelButton.Location = new System.Drawing.Point(55, 393);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.OnHoverBaseColor = System.Drawing.Color.Red;
             this.CancelButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -224,23 +226,21 @@ namespace ImageConverter.Forms
             this.AutoOpenFolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.AutoOpenFolder.Location = new System.Drawing.Point(12, 276);
             this.AutoOpenFolder.Name = "AutoOpenFolder";
-            this.AutoOpenFolder.Size = new System.Drawing.Size(349, 24);
+            this.AutoOpenFolder.Size = new System.Drawing.Size(277, 24);
             this.AutoOpenFolder.TabIndex = 88;
-            this.AutoOpenFolder.Text = "Open output folder after successful conversion";
+            this.AutoOpenFolder.Text = "Open output folder after conversion";
             this.AutoOpenFolder.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             // 
             // DarkRadioButton
             // 
             this.DarkRadioButton.BaseColor = System.Drawing.SystemColors.Control;
-            this.DarkRadioButton.Checked = global::ImageConverter.Properties.Settings.Default.NightModeEnabled;
             this.DarkRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
             this.DarkRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(80)))), ((int)(((byte)(167)))));
             this.DarkRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DarkRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ImageConverter.Properties.Settings.Default, "NightModeEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DarkRadioButton.FillColor = System.Drawing.Color.White;
             this.DarkRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.DarkRadioButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DarkRadioButton.Location = new System.Drawing.Point(124, 180);
+            this.DarkRadioButton.Location = new System.Drawing.Point(126, 180);
             this.DarkRadioButton.Name = "DarkRadioButton";
             this.DarkRadioButton.Size = new System.Drawing.Size(54, 20);
             this.DarkRadioButton.TabIndex = 82;
@@ -265,51 +265,87 @@ namespace ImageConverter.Forms
             this.ShowStepsPanel.Text = "Show steps panel";
             this.ShowStepsPanel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             // 
-            // DarkThemePreview
+            // WhiteRadioButton
             // 
-            this.DarkThemePreview.BackColor = System.Drawing.Color.Transparent;
-            this.DarkThemePreview.BorderColor = System.Drawing.Color.LightGray;
-            this.DarkThemePreview.BorderSize = -1;
-            this.DarkThemePreview.CurrentTheme = null;
-            this.DarkThemePreview.Location = new System.Drawing.Point(109, 58);
-            this.DarkThemePreview.Name = "DarkThemePreview";
-            this.DarkThemePreview.Size = new System.Drawing.Size(87, 116);
-            this.DarkThemePreview.TabIndex = 85;
+            this.WhiteRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.WhiteRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.WhiteRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(80)))), ((int)(((byte)(167)))));
+            this.WhiteRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WhiteRadioButton.FillColor = System.Drawing.Color.White;
+            this.WhiteRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.WhiteRadioButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.WhiteRadioButton.Location = new System.Drawing.Point(211, 180);
+            this.WhiteRadioButton.Name = "WhiteRadioButton";
+            this.WhiteRadioButton.Size = new System.Drawing.Size(59, 20);
+            this.WhiteRadioButton.TabIndex = 94;
+            this.WhiteRadioButton.Text = "White";
+            this.WhiteRadioButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
             // 
             // LightThemePreview
             // 
             this.LightThemePreview.BackColor = System.Drawing.Color.Transparent;
             this.LightThemePreview.BorderColor = System.Drawing.Color.LightGray;
-            this.LightThemePreview.BorderSize = -1;
+            this.LightThemePreview.BorderSize = 3;
             this.LightThemePreview.CurrentTheme = null;
-            this.LightThemePreview.Location = new System.Drawing.Point(16, 58);
+            this.LightThemePreview.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LightThemePreview.Location = new System.Drawing.Point(12, 58);
             this.LightThemePreview.Name = "LightThemePreview";
             this.LightThemePreview.Size = new System.Drawing.Size(87, 116);
-            this.LightThemePreview.TabIndex = 84;
+            this.LightThemePreview.TabIndex = 95;
+            this.LightThemePreview.Click += new System.EventHandler(this.LightThemePreview_Click);
             // 
-            // header1
+            // WhiteThemePreview
             // 
-            this.header1.BackColor = System.Drawing.Color.LightGray;
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.header1.HeaderText = " Settings";
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Margin = new System.Windows.Forms.Padding(0);
-            this.header1.MaximumSize = new System.Drawing.Size(1000, 26);
-            this.header1.MinimiseBox = false;
-            this.header1.MinimumSize = new System.Drawing.Size(232, 26);
-            this.header1.Name = "header1";
-            this.header1.OnCloseButtonClicked = null;
-            this.header1.Size = new System.Drawing.Size(374, 26);
-            this.header1.TabIndex = 0;
-            this.header1.TargetForm = this;
+            this.WhiteThemePreview.BackColor = System.Drawing.Color.Transparent;
+            this.WhiteThemePreview.BorderColor = System.Drawing.Color.LightGray;
+            this.WhiteThemePreview.BorderSize = 3;
+            this.WhiteThemePreview.CurrentTheme = null;
+            this.WhiteThemePreview.Cursor = System.Windows.Forms.Cursors.Default;
+            this.WhiteThemePreview.Location = new System.Drawing.Point(198, 58);
+            this.WhiteThemePreview.Name = "WhiteThemePreview";
+            this.WhiteThemePreview.Size = new System.Drawing.Size(87, 116);
+            this.WhiteThemePreview.TabIndex = 93;
+            this.WhiteThemePreview.Click += new System.EventHandler(this.WhiteThemePreview_Click);
+            // 
+            // DarkThemePreview
+            // 
+            this.DarkThemePreview.BackColor = System.Drawing.Color.Transparent;
+            this.DarkThemePreview.BorderColor = System.Drawing.Color.LightGray;
+            this.DarkThemePreview.BorderSize = 3;
+            this.DarkThemePreview.CurrentTheme = null;
+            this.DarkThemePreview.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DarkThemePreview.Location = new System.Drawing.Point(105, 58);
+            this.DarkThemePreview.Name = "DarkThemePreview";
+            this.DarkThemePreview.Size = new System.Drawing.Size(87, 116);
+            this.DarkThemePreview.TabIndex = 85;
+            this.DarkThemePreview.Click += new System.EventHandler(this.DarkThemePreview_Click);
+            // 
+            // FormHeader
+            // 
+            this.FormHeader.BackColor = System.Drawing.Color.LightGray;
+            this.FormHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FormHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FormHeader.HeaderText = " Settings";
+            this.FormHeader.Location = new System.Drawing.Point(0, 0);
+            this.FormHeader.Margin = new System.Windows.Forms.Padding(0);
+            this.FormHeader.MaximumSize = new System.Drawing.Size(1000, 26);
+            this.FormHeader.MinimiseBox = false;
+            this.FormHeader.MinimumSize = new System.Drawing.Size(232, 26);
+            this.FormHeader.Name = "FormHeader";
+            this.FormHeader.OnCloseButtonClicked = null;
+            this.FormHeader.Size = new System.Drawing.Size(299, 26);
+            this.FormHeader.TabIndex = 0;
+            this.FormHeader.TargetForm = this;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(374, 447);
+            this.ClientSize = new System.Drawing.Size(299, 447);
+            this.Controls.Add(this.LightThemePreview);
+            this.Controls.Add(this.WhiteRadioButton);
+            this.Controls.Add(this.WhiteThemePreview);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ShowInTaskBarCheckBox);
             this.Controls.Add(this.RenameImagesChekBox);
@@ -318,13 +354,12 @@ namespace ImageConverter.Forms
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DarkThemePreview);
-            this.Controls.Add(this.LightThemePreview);
             this.Controls.Add(this.LightRadioButton);
             this.Controls.Add(this.DarkRadioButton);
             this.Controls.Add(this.ShowStepsPanel);
             this.Controls.Add(this.ThemeLabel);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.header1);
+            this.Controls.Add(this.FormHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
@@ -340,13 +375,12 @@ namespace ImageConverter.Forms
         #endregion
 
         private Guna.UI.WinForms.GunaElipse ElipseForm;
-        private Controls.Header header1;
+        private Controls.Header FormHeader;
         private Guna.UI.WinForms.GunaButton SaveButton;
         private System.Windows.Forms.Label ThemeLabel;
         private Guna.UI.WinForms.GunaCheckBox ShowStepsPanel;
         private Guna.UI.WinForms.GunaRadioButton LightRadioButton;
         private Guna.UI.WinForms.GunaRadioButton DarkRadioButton;
-        private Controls.ThemePreview LightThemePreview;
         private Controls.ThemePreview DarkThemePreview;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton CancelButton;
@@ -355,5 +389,8 @@ namespace ImageConverter.Forms
         private Guna.UI.WinForms.GunaCheckBox RenameImagesChekBox;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaCheckBox ShowInTaskBarCheckBox;
+        private Guna.UI.WinForms.GunaRadioButton WhiteRadioButton;
+        private Controls.ThemePreview WhiteThemePreview;
+        private Controls.ThemePreview LightThemePreview;
     }
 }

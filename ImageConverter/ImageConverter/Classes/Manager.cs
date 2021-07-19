@@ -19,16 +19,14 @@ namespace ImageConverter.Classes
         public const string OutputFolder = @"Folder/";
         private FlowLayoutPanel CurrentPanel { get; set; }
         public Action UpdateCountersMethod { get; set; }
-        public Label CurrentImageNunLabel { get; set; }
         public ProgressBarControl CurrentProgressBar { get; private set; }
         public Action OnWorkComplete { get; set; }
         public bool IsWorking { get; private set; } = false;
 
-        public Manager(FlowLayoutPanel panel, ProgressBarControl progressBar, Label currentImageNunLabel)
+        public Manager(FlowLayoutPanel panel, ProgressBarControl progressBar)
         {
             CurrentPanel = panel;
             CurrentProgressBar = progressBar;
-            CurrentImageNunLabel = currentImageNunLabel;
         }
 
         public void AddImagesOnPanel(List<string> fileNames)
@@ -94,7 +92,6 @@ namespace ImageConverter.Classes
                 }
                 else
                 {
-                    CurrentImageNunLabel.Text = CurrentProgressBar.ToString();
                     CurrentProgressBar.Value = value;
                 }
             }

@@ -47,6 +47,7 @@ namespace ImageConverter.Controls
             this.BackPanel.Controls.Add(this.Panel3);
             this.BackPanel.Controls.Add(this.Panel2);
             this.BackPanel.Controls.Add(this.Panel1);
+            this.BackPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackPanel.Location = new System.Drawing.Point(2, 2);
             this.BackPanel.Margin = new System.Windows.Forms.Padding(0, 0, 1, 1);
@@ -54,28 +55,39 @@ namespace ImageConverter.Controls
             this.BackPanel.Radius = 4;
             this.BackPanel.Size = new System.Drawing.Size(82, 111);
             this.BackPanel.TabIndex = 0;
+            this.BackPanel.Click += new System.EventHandler(this.Control_Click);
+            this.BackPanel.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.BackPanel.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // Panel4
             // 
             this.Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel4.BackColor = System.Drawing.Color.Transparent;
             this.Panel4.BaseColor = System.Drawing.Color.Gray;
+            this.Panel4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Panel4.Location = new System.Drawing.Point(50, 95);
             this.Panel4.Name = "Panel4";
             this.Panel4.Radius = 4;
             this.Panel4.Size = new System.Drawing.Size(29, 13);
             this.Panel4.TabIndex = 5;
+            this.Panel4.Click += new System.EventHandler(this.Control_Click);
+            this.Panel4.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.Panel4.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // Panel3
             // 
             this.Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Panel3.BackColor = System.Drawing.Color.Transparent;
             this.Panel3.BaseColor = System.Drawing.Color.Gray;
+            this.Panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Panel3.Location = new System.Drawing.Point(3, 95);
             this.Panel3.Name = "Panel3";
             this.Panel3.Radius = 4;
             this.Panel3.Size = new System.Drawing.Size(29, 13);
             this.Panel3.TabIndex = 6;
+            this.Panel3.Click += new System.EventHandler(this.Control_Click);
+            this.Panel3.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.Panel3.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // Panel2
             // 
@@ -83,11 +95,15 @@ namespace ImageConverter.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.Panel2.BaseColor = System.Drawing.Color.Gray;
+            this.Panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Panel2.Location = new System.Drawing.Point(3, 55);
             this.Panel2.Name = "Panel2";
             this.Panel2.Radius = 4;
             this.Panel2.Size = new System.Drawing.Size(76, 13);
             this.Panel2.TabIndex = 7;
+            this.Panel2.Click += new System.EventHandler(this.Control_Click);
+            this.Panel2.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.Panel2.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // Panel1
             // 
@@ -95,27 +111,34 @@ namespace ImageConverter.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel1.BackColor = System.Drawing.Color.Transparent;
             this.Panel1.BaseColor = System.Drawing.Color.Gray;
+            this.Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Panel1.Location = new System.Drawing.Point(3, 3);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(76, 46);
             this.Panel1.TabIndex = 4;
+            this.Panel1.Click += new System.EventHandler(this.Control_Click);
+            this.Panel1.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.Panel1.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // BorderPanel
             // 
             this.BorderPanel.BackColor = System.Drawing.Color.Transparent;
             this.BorderPanel.BaseColor = System.Drawing.Color.LightGray;
             this.BorderPanel.Controls.Add(this.BackPanel);
+            this.BorderPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BorderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BorderPanel.Location = new System.Drawing.Point(0, 0);
             this.BorderPanel.Name = "BorderPanel";
             this.BorderPanel.Padding = new System.Windows.Forms.Padding(2, 2, 3, 3);
             this.BorderPanel.Size = new System.Drawing.Size(87, 116);
             this.BorderPanel.TabIndex = 1;
+            this.BorderPanel.Click += new System.EventHandler(this.Control_Click);
+            this.BorderPanel.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
+            this.BorderPanel.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
             // 
             // ThemePreview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.BorderPanel);
             this.Name = "ThemePreview";

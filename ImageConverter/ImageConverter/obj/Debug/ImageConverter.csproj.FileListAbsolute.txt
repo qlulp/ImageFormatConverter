@@ -1,7 +1,6 @@
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\bin\Debug\ImageConverter.exe.config
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\bin\Debug\ImageConverter.exe
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\bin\Debug\ImageConverter.pdb
-C:\Users\Admin\Desktop\ImageConverter\ImageConverter\obj\Debug\ImageConverter.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\obj\Debug\ImageConverter.Controls.ImageControl.resources
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\obj\Debug\ImageConverter.MainForm.resources
 C:\Users\Admin\Desktop\ImageConverter\ImageConverter\obj\Debug\ImageConverter.Properties.Resources.resources

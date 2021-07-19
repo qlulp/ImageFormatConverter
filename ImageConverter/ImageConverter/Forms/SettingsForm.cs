@@ -8,15 +8,14 @@ using System.Windows.Forms;
 namespace ImageConverter.Forms
 {
     public partial class SettingsForm : Form
-    {
-        private Theme CurrentTheme;
-
+    { 
         public SettingsForm()
         {
             InitializeComponent();
             DarkThemePreview.CurrentTheme = new DarkTheme();
             LightThemePreview.CurrentTheme = new LightTheme();
-            header1.OnCloseButtonClicked = new Action(OnCloseButtonClicked);
+            WhiteThemePreview.CurrentTheme = new WhiteTheme();
+            FormHeader.OnCloseButtonClicked = new Action(OnCloseButtonClicked);
             UpdateView();
         }
 
@@ -28,9 +27,13 @@ namespace ImageConverter.Forms
             {
                 LightRadioButton.Checked = true;
             }
-            else
+            else if (Configuration.CurrentTheme is DarkTheme)
             {
                 DarkRadioButton.Checked = true;
+            }
+            else
+            {
+                WhiteRadioButton.Checked = true;
             }
 
             ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
@@ -71,9 +74,13 @@ namespace ImageConverter.Forms
             {
                 Properties.Settings.Default.CurrentTheme = DarkThemePreview.CurrentTheme.Name;
             }
-            else
+            else if (LightRadioButton.Checked)
             {
                 Properties.Settings.Default.CurrentTheme = LightThemePreview.CurrentTheme.Name;
+            }
+            else
+            {
+                Properties.Settings.Default.CurrentTheme = WhiteThemePreview.CurrentTheme.Name;
             }
             Properties.Settings.Default.Save();
             Close();
@@ -83,6 +90,21 @@ namespace ImageConverter.Forms
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void WhiteThemePreview_Click(object sender, EventArgs e)
+        {
+            WhiteRadioButton.Checked = true;
+        }
+
+        private void DarkThemePreview_Click(object sender, EventArgs e)
+        {
+            DarkRadioButton.Checked = true;
+        }
+
+        private void LightThemePreview_Click(object sender, EventArgs e)
+        {
+            LightRadioButton.Checked = true;
         }
     }
 }

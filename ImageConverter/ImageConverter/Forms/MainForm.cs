@@ -21,7 +21,7 @@ namespace ImageConverter
             InitializeComponent();
             UpdateView();
 
-            ApplicationManager = new Manager(ImagePanel, UploadProgressBar, CurrentImageNunLabel);
+            ApplicationManager = new Manager(ImagePanel, UploadProgressBar);
             ApplicationManager.UpdateCountersMethod += UpdateCounters;
         }
 
@@ -404,7 +404,7 @@ namespace ImageConverter
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            // this.Hide();
+            this.Hide();
             using (SettingsForm settings = new SettingsForm())
             {
                 DialogResult dr = settings.ShowDialog();
@@ -412,7 +412,7 @@ namespace ImageConverter
                 {
                     UpdateView();
                 }
-                // Show();
+                Show();
             }
         }
     }

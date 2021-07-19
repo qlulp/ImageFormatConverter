@@ -12,6 +12,7 @@ namespace ImageConverter.Classes
                 {
                     case "LightTheme": return new LightTheme();
                     case "DarkTheme": return new DarkTheme();
+                    case "WhiteTheme": return new WhiteTheme();
                     default: return new LightTheme();
                 }
             }

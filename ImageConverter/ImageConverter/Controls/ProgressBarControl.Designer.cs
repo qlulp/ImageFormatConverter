@@ -39,15 +39,16 @@ namespace ImageConverter.Controls
             this.FrontPanel.BackColor = System.Drawing.Color.BlueViolet;
             this.FrontPanel.Location = new System.Drawing.Point(0, 0);
             this.FrontPanel.Name = "FrontPanel";
-            this.FrontPanel.Size = new System.Drawing.Size(150, 150);
+            this.FrontPanel.Size = new System.Drawing.Size(100, 50);
             this.FrontPanel.TabIndex = 0;
             // 
             // ProgressBarControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.FrontPanel);
+            this.MaximumSize = new System.Drawing.Size(496, 50);
             this.Name = "ProgressBarControl";
+            this.Size = new System.Drawing.Size(100, 50);
             this.SizeChanged += new System.EventHandler(this.ProgressBarControl_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ProgressBarControl_Paint);
             this.ResumeLayout(false);

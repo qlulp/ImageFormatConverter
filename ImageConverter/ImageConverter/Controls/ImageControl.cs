@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageConverter.Classes;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +8,6 @@ namespace ImageConverter.Controls
     public partial class ImageControl : UserControl
     {
         public bool IsSelected { get; private set; } = false;
-        public Color SelectedColor = Color.FromArgb(184, 116, 228);
         public Color BaseColor = Color.Transparent;
         public Image CurrentImage
         {
@@ -27,7 +27,7 @@ namespace ImageConverter.Controls
             IsSelected = !IsSelected;
             if (IsSelected)
             {
-                BackColor = SelectedColor;
+                BackColor = Configuration.CurrentTheme.ActiveColor;
             }
             else
             {

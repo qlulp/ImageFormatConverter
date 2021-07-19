@@ -4,41 +4,60 @@ using ImageConverter.Controls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ImageConverter
 {
     public partial class MainForm : Form
     {
-        Manager ApplicationManager;
-        private const string OutputFolder = @"Folder/";
-        private const int CountOfSteps = 4;
-        private int _CurrentStep = 1;
-        public int CurrentStep
-        {
-            get => _CurrentStep;
-            set
-            {
-                if (value <= CountOfSteps && value > 0)
-                {
-                    _CurrentStep = value;
-                    UpdateTipsView();
-                }
-            }
-        }
+        private Manager ApplicationManager;
+
         public MainForm()
         {
             InitializeComponent();
-
+            LoadTheme();
             ApplicationManager = new Manager(ImagePanel, UploadProgressBar);
             ApplicationManager.UpdateCountersMethod += UpdateCounters;
-            UpdateFormView();
             ShowStepsCheckBox.Checked = Properties.Settings.Default.ShowStepsPanel;
+            SwitchStepPanel();
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = Configuration.CurrentTheme.WindowBackColor;
+            DropPanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
+            ImagePanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
+            UploadProgressBar.BackColor = Configuration.CurrentTheme.PanelBackColor;
+            DropLabel.ForeColor = Configuration.CurrentTheme.ForeColor;
+
+
+            foreach (Label label in Controls.OfType<GunaLabel>())
+            {
+                label.ForeColor = Configuration.CurrentTheme.ForeColor;
+            }
+
+            foreach (GunaCheckBox checkBox in Controls.OfType<GunaCheckBox>())
+            {
+                checkBox.ForeColor = Configuration.CurrentTheme.ForeColor;
+                checkBox.BaseColor = Configuration.CurrentTheme.WindowBackColor;
+            }
+
+            foreach (GunaTextBox textBox in Controls.OfType<GunaTextBox>())
+            {
+                textBox.FocusedForeColor = textBox.ForeColor = Configuration.CurrentTheme.ForeColor;
+                textBox.BaseColor = Configuration.CurrentTheme.WindowBackColor;
+                textBox.FocusedBaseColor = Configuration.CurrentTheme.PanelBackColor;
+                textBox.BorderColor = textBox.FocusedBorderColor = Configuration.CurrentTheme.LineColor;
+            }
+
+            foreach (GunaRadioButton radioButton in Controls.OfType<GunaRadioButton>())
+            {
+                radioButton.ForeColor = Configuration.CurrentTheme.ForeColor;
+                radioButton.BaseColor = Configuration.CurrentTheme.WindowBackColor;
+            }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -57,7 +76,7 @@ namespace ImageConverter
             ApplicationManager.AddImagesOnPanel(fileNames);
         }
 
-        
+
         private void UpdateCounters()
         {
             if (InvokeRequired)
@@ -80,13 +99,13 @@ namespace ImageConverter
 
                 if (count > 0)
                 {
-                    CurrentStep = 4;
+                    StepSidePanel.CurrentStep = 4;
 
                     if (selectedCount > 0)
-                        CurrentStep = 2;
-                    else CurrentStep = 4;
+                        StepSidePanel.CurrentStep = 2;
+                    else StepSidePanel.CurrentStep = 4;
                 }
-                else CurrentStep = 1;
+                else StepSidePanel.CurrentStep = 1;
             }
         }
 
@@ -111,7 +130,7 @@ namespace ImageConverter
         private void DropPanel_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.All;
-            DropPanel.BackColor = Color.Lavender;
+            DropPanel.BackColor = Configuration.CurrentTheme.OnDragDropColor;
         }
 
         private void DropPanel_DragDrop(object sender, DragEventArgs e)
@@ -121,10 +140,11 @@ namespace ImageConverter
 
         private void DragDropFiles(object sender, DragEventArgs e)
         {
+            ImagePanel.VerticalScroll.Visible = false;
             try
             {
-                CurrentStep = 2;
-                DropPanel.BackColor = Color.White;
+                StepSidePanel.CurrentStep = 2;
+                DropPanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
                 List<string> fileNames = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
                 if (fileNames != null)
                 {
@@ -143,13 +163,13 @@ namespace ImageConverter
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Forms.MessageBox.Show(ex.Message);
             }
         }
 
         private void DropPanel_DragLeave(object sender, EventArgs e)
         {
-            DropPanel.BackColor = Color.White;
+            DropPanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
         }
 
         private void ConvertButton_Click(object sender, EventArgs e)
@@ -167,7 +187,7 @@ namespace ImageConverter
                     int width = int.Parse(WidthTextBox.Text);
                     int height = int.Parse(HeightTextBox.Text);
 
-                    ApplicationManager.SaveImages(imageNames, OutputFolder, selectedFormat, width, height, resize, saveProportions);
+                    ApplicationManager.SaveImages(imageNames, selectedFormat, width, height, resize, saveProportions);
                     break;
                 }
             }
@@ -215,7 +235,7 @@ namespace ImageConverter
                 { ImageFormat.Wmf, WMFButton }
             };
 
-            foreach(var format in availableFormats)
+            foreach (var format in availableFormats)
             {
                 if (format.Value == button)
                     return format.Key;
@@ -227,31 +247,31 @@ namespace ImageConverter
         {
             try
             {
-                string path = $"{Environment.CurrentDirectory}\\{OutputFolder}";
+                string path = $"{Environment.CurrentDirectory}\\{Manager.OutputFolder}";
                 Directory.CreateDirectory(path);
                 Process.Start(path);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Forms.MessageBox.Show(ex.Message);
             }
         }
 
         private void ImagePanel_DragDrop(object sender, DragEventArgs e)
         {
             DragDropFiles(sender, e);
-            ImagePanel.BackColor = Color.White;
+            ImagePanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
         }
 
         private void ImagePanel_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.All;
-            ImagePanel.BackColor = Color.Lavender;
+            ImagePanel.BackColor = Configuration.CurrentTheme.OnDragDropColor;
         }
 
         private void ImagePanel_DragLeave(object sender, EventArgs e)
         {
-            ImagePanel.BackColor = Color.White;
+            ImagePanel.BackColor = Configuration.CurrentTheme.PanelBackColor;
         }
 
         private void ClearAllButton_Click(object sender, EventArgs e)
@@ -262,73 +282,6 @@ namespace ImageConverter
         private void ClearSelectedButton_Click(object sender, EventArgs e)
         {
             ApplicationManager.ClearSelectedImages();
-        }
-
-        private void ClearSelectedItems()
-        {
-            do
-            {
-                foreach (ImageControl image in ImagePanel.Controls.OfType<ImageControl>())
-                {
-                    if (image.IsSelected)
-                    {
-                        ImagePanel.Controls.Remove(image);
-                    }
-                }
-                UpdateCounters();
-            } while (ImagePanel.Controls.OfType<ImageControl>().Where(i => i.IsSelected).Count() > 0) ;
-        }
-
-        private void UpdateTipsView()
-        {
-            foreach (Panel panel in TipPanel.Controls.OfType<Panel>())
-            {
-                panel.BackColor = CurrentTheme.DisabledColor;
-            }
-
-            foreach (GunaElipsePanel panel in TipPanel.Controls.OfType<GunaElipsePanel>())
-            {
-                panel.BackColor = Color.Transparent;
-                panel.BaseColor = CurrentTheme.DisabledColor;
-            }
-
-            foreach (Label label in TipPanel.Controls.OfType<Label>())
-            {
-                label.ForeColor = CurrentTheme.DisabledColor;
-            }
-
-            switch (CurrentStep)
-            {
-                case 1:
-                    Tip1Label.ForeColor = CurrentTheme.ActiveColor;
-                    Step1Panel.BaseColor = CurrentTheme.ActiveColor;
-                    Line1.BackColor = CurrentTheme.ActiveColor;
-                    break;
-                case 2:
-                    Tip2Label.ForeColor = CurrentTheme.ActiveColor;
-                    Step2Panel.BaseColor = CurrentTheme.ActiveColor;
-                    Line2.BackColor = CurrentTheme.ActiveColor;
-                    break;
-                case 3:
-                    Tip3Label.ForeColor = CurrentTheme.ActiveColor;
-                    Step3Panel.BaseColor = CurrentTheme.ActiveColor;
-                    Line3.BackColor = CurrentTheme.ActiveColor;
-                    break;
-                case 4:
-                    Tip4Label.ForeColor = CurrentTheme.ActiveColor;
-                    Step4Panel.BaseColor = CurrentTheme.ActiveColor;
-                    break;
-            }
-        }
-
-        private void CloseButton_MouseEnter(object sender, EventArgs e)
-        {
-            CloseButton.ForeColor = Color.Red;
-        }
-
-        private void CloseButton_MouseLeave(object sender, EventArgs e)
-        {
-            CloseButton.ForeColor = Color.FromArgb(64, 64, 64);
         }
 
         private void VersionLabel_Click(object sender, EventArgs e)
@@ -347,12 +300,12 @@ namespace ImageConverter
             {
                 if (ResizeCheckBox.Checked)
                 {
-                    CurrentStep = 3;
+                    StepSidePanel.CurrentStep = 3;
                 }
                 else
                 {
                     SavePropCheckBox.Checked = false;
-                    CurrentStep = 4;
+                    StepSidePanel.CurrentStep = 4;
                 }
             }
         }
@@ -387,7 +340,7 @@ namespace ImageConverter
                 {
                     (sender as GunaTextBox).Text = "1";
                 }
-                CurrentStep = 3;
+                StepSidePanel.CurrentStep = 3;
             }
         }
 
@@ -398,28 +351,31 @@ namespace ImageConverter
                 if (SavePropCheckBox.Checked)
                 {
                     ResizeCheckBox.Checked = true;
-                    CurrentStep = 3;
+                    StepSidePanel.CurrentStep = 3;
                 }
             }
         }
 
         private void ShowStepsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
             Properties.Settings.Default.ShowStepsPanel = ShowStepsCheckBox.Checked;
             Properties.Settings.Default.Save();
-            UpdateFormView();
+            SwitchStepPanel();
         }
 
-        private void UpdateFormView()
+        private void SwitchStepPanel()
         {
-            if (Properties.Settings.Default.ShowStepsPanel)
             {
-                this.Width = 597;
-            }
-            else
-            {
-                this.Width = 520;
+                if (Properties.Settings.Default.ShowStepsPanel)
+                {
+                    // TipPanel.Visible = true;
+                    this.Width = 607;
+                }
+                else
+                {
+                    // TipPanel.Visible = false;
+                    this.Width = 520;
+                }
             }
         }
 
@@ -428,13 +384,19 @@ namespace ImageConverter
             if (ImagePanel.Controls.OfType<ImageControl>().Count() > 0)
             {
                 if (HeightTextBox.Focused)
-                    CurrentStep = 4;
+                    StepSidePanel.CurrentStep = 4;
             }
         }
 
-        private void progressBarControl1_Load(object sender, EventArgs e)
+        private void ShowStepsCheckBox_MouseDown(object sender, MouseEventArgs e)
         {
+            SwitchStepPanel();
+        }
 
+
+        private void MainForm_MouseEnter(object sender, EventArgs e)
+        {
+            ConvertButton.Focus();
         }
     }
 }

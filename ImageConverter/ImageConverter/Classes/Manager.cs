@@ -1,5 +1,5 @@
-﻿using Guna.UI.WinForms;
-using ImageConverter.Controls;
+﻿using ImageConverter.Controls;
+using ImageConverter.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +15,7 @@ namespace ImageConverter.Classes
 {
     public class Manager
     {
+        public const string OutputFolder = @"Folder/";
         private FlowLayoutPanel CurrentPanel { get; set; }
         public Action UpdateCountersMethod { get; set; }
         public ProgressBarControl CurrentProgressBar { get; private set; }
@@ -46,13 +47,13 @@ namespace ImageConverter.Classes
                             UpdateProgressValue(i);
                         }
                     }
-                    catch (InvalidAsynchronousStateException ex)
-                    { 
+                    catch (InvalidAsynchronousStateException)
+                    {
                         // nothing
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        Forms.MessageBox.Show("Exception detected", ex.Message);
                     }
                     finally
                     {
@@ -82,17 +83,28 @@ namespace ImageConverter.Classes
         delegate void UpdateProgressValueDelegate(int value);
         public void UpdateProgressValue(int value)
         {
-            if (CurrentProgressBar.InvokeRequired)
+            try
             {
-                CurrentProgressBar.Invoke(new UpdateProgressValueDelegate(UpdateProgressValue), new object[] { value });
+                if (CurrentProgressBar.InvokeRequired)
+                {
+                    CurrentProgressBar.Invoke(new UpdateProgressValueDelegate(UpdateProgressValue), new object[] { value });
+                }
+                else
+                {
+                    CurrentProgressBar.Value = value;
+                }
             }
-            else
+            catch (InvalidAsynchronousStateException)
             {
-                CurrentProgressBar.Value = value;
+                
+            }
+            catch (Exception ex)
+            {
+                Forms.MessageBox.Show("Exception detected", ex.Message);
             }
         }
 
-        public void SaveImages(List<string> imageNames, string path, ImageFormat format, int width = 100, int height = 100, bool resize = false, bool saveProportions = false)
+        public void SaveImages(List<string> imageNames, ImageFormat format, int width = 100, int height = 100, bool resize = false, bool saveProportions = false)
         {
             if (!IsWorking)
             {
@@ -101,7 +113,7 @@ namespace ImageConverter.Classes
                     try
                     {
                         IsWorking = true;
-                        Directory.CreateDirectory(path);
+                        Directory.CreateDirectory(OutputFolder);
                         for (int i = 0; i < imageNames.Count; i++)
                         {
                             if (resize)
@@ -112,29 +124,29 @@ namespace ImageConverter.Classes
                                     {
                                         using (Image newImage = ScaleImage(image, width, height))
                                         {
-                                            newImage.Save($"{path}/{i + 1}.{format}", format);
+                                            newImage.Save($"{OutputFolder}/{i + 1}.{format}", format);
                                         }
                                     }
                                     else
                                     {
-                                        ResizeImage(image, width, height).Save($"{path}/{i + 1}.{format}", format);
+                                        ResizeImage(image, width, height).Save($"{OutputFolder}/{i + 1}.{format}", format);
                                     }
                                 }
                             }
                             else
                             {
-                                Image.FromFile(imageNames[i]).Save($"{path}/{i + 1}.{format}", format);
+                                Image.FromFile(imageNames[i]).Save($"{OutputFolder}/{i + 1}.{format}", format);
                             }
                             UpdateProgressValue(i + 1);
                         }
                     }
-                    catch (InvalidAsynchronousStateException ex)
+                    catch (InvalidAsynchronousStateException)
                     {
                         // nothing
                     }
                     catch (Exception ex)
-                    { 
-                        MessageBox.Show(ex.Message);
+                    {
+                        Forms.MessageBox.Show("Exception detected", ex.Message);
                     }
                     finally
                     {
@@ -170,13 +182,13 @@ namespace ImageConverter.Classes
                             } while (CurrentPanel.Controls.OfType<ImageControl>().Where(i => i.IsSelected).Count() > 0);
                         }));
                     }
-                    catch (InvalidAsynchronousStateException ex)
+                    catch (InvalidAsynchronousStateException)
                     {
                         // nothing
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Forms.MessageBox.Show("Exception detected", ex.Message);
                     }
                     finally
                     {
@@ -202,13 +214,13 @@ namespace ImageConverter.Classes
                             CurrentPanel.Controls.Clear();
                         }));
                     }
-                    catch (InvalidAsynchronousStateException ex)
+                    catch (InvalidAsynchronousStateException)
                     {
                         // nothing
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Forms.MessageBox.Show("Exception detected", ex.Message);
                     }
                     finally
                     {

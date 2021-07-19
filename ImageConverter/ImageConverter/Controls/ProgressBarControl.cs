@@ -54,7 +54,7 @@ namespace ImageConverter.Controls
         {
             if (Value == 0)
                 return string.Empty;
-            else return $"{Value + 1} of {MaxValue}";
+            else return $"{Value} of {MaxValue}";
         }
     }
 }

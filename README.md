@@ -48,6 +48,7 @@ v1.3.0 features:
 - added ability to auto open folder
 - added ability to save old image names
 - added ability to hide application in task bar
+- updated user interface
 - other minor changes
 
 # Screenshots

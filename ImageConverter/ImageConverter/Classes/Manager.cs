@@ -3,6 +3,7 @@ using ImageConverter.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -18,14 +19,16 @@ namespace ImageConverter.Classes
         public const string OutputFolder = @"Folder/";
         private FlowLayoutPanel CurrentPanel { get; set; }
         public Action UpdateCountersMethod { get; set; }
+        public Label CurrentImageNunLabel { get; set; }
         public ProgressBarControl CurrentProgressBar { get; private set; }
         public Action OnWorkComplete { get; set; }
         public bool IsWorking { get; private set; } = false;
 
-        public Manager(FlowLayoutPanel panel, ProgressBarControl progressBar)
+        public Manager(FlowLayoutPanel panel, ProgressBarControl progressBar, Label currentImageNunLabel)
         {
             CurrentPanel = panel;
             CurrentProgressBar = progressBar;
+            CurrentImageNunLabel = currentImageNunLabel;
         }
 
         public void AddImagesOnPanel(List<string> fileNames)
@@ -91,6 +94,7 @@ namespace ImageConverter.Classes
                 }
                 else
                 {
+                    CurrentImageNunLabel.Text = CurrentProgressBar.ToString();
                     CurrentProgressBar.Value = value;
                 }
             }
@@ -116,6 +120,12 @@ namespace ImageConverter.Classes
                         Directory.CreateDirectory(OutputFolder);
                         for (int i = 0; i < imageNames.Count; i++)
                         {
+                            string imageName = $"{i + 1}";
+                            if (!Properties.Settings.Default.RenameOutputImages)
+                            {
+                                imageName = Path.GetFileNameWithoutExtension(imageNames[i]);
+                            }
+
                             if (resize)
                             {
                                 using (var image = Image.FromFile(imageNames[i]))
@@ -124,20 +134,26 @@ namespace ImageConverter.Classes
                                     {
                                         using (Image newImage = ScaleImage(image, width, height))
                                         {
-                                            newImage.Save($"{OutputFolder}/{i + 1}.{format}", format);
+                                            newImage.Save($"{OutputFolder}/{imageName}.{format}", format);
                                         }
                                     }
                                     else
                                     {
-                                        ResizeImage(image, width, height).Save($"{OutputFolder}/{i + 1}.{format}", format);
+                                        ResizeImage(image, width, height).Save($"{OutputFolder}/{imageName}.{format}", format);
                                     }
                                 }
                             }
                             else
                             {
-                                Image.FromFile(imageNames[i]).Save($"{OutputFolder}/{i + 1}.{format}", format);
+                                Image.FromFile(imageNames[i]).Save($"{OutputFolder}/{imageName}.{format}", format);
                             }
                             UpdateProgressValue(i + 1);
+                        }
+
+                        if (Properties.Settings.Default.AutoOpenFolder)
+                        {
+                            string path = $"{Environment.CurrentDirectory}\\{OutputFolder}";
+                            Process.Start(path);
                         }
                     }
                     catch (InvalidAsynchronousStateException)

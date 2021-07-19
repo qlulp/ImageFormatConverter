@@ -1,45 +1,88 @@
-﻿using ImageConverter.Classes;
+﻿using Guna.UI.WinForms;
+using ImageConverter.Classes;
+using ImageConverter.Classes.Themes;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ImageConverter.Forms
 {
     public partial class SettingsForm : Form
     {
-        private static SettingsForm Instanse = null;
+        private Theme CurrentTheme;
+
         public SettingsForm()
         {
             InitializeComponent();
-            Instanse = this;
+            DarkThemePreview.CurrentTheme = new DarkTheme();
+            LightThemePreview.CurrentTheme = new LightTheme();
+            header1.OnCloseButtonClicked = new Action(OnCloseButtonClicked);
+            UpdateView();
+        }
+
+        private void UpdateView()
+        {
             ApplyTheme();
+
+            if (Configuration.CurrentTheme is LightTheme)
+            {
+                LightRadioButton.Checked = true;
+            }
+            else
+            {
+                DarkRadioButton.Checked = true;
+            }
+
+            ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
+        }
+
+        private void OnCloseButtonClicked()
+        {
+            DialogResult = DialogResult.Cancel;
         }
 
         public void ApplyTheme()
         {
             BackColor = Configuration.CurrentTheme.WindowBackColor;
-        }
-
-        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Instanse = null;
-        }
-
-        public new void Show()
-        {
-            if (Instanse != null)
+         
+            foreach (Label label in Controls.OfType<Label>())
             {
-                base.Show();
-                Instanse.BringToFront();
+                label.ForeColor = Configuration.CurrentTheme.ForeColor;
+            }
+
+            foreach (GunaRadioButton radioButton in Controls.OfType<GunaRadioButton>())
+            {
+                radioButton.ForeColor = Configuration.CurrentTheme.ForeColor;
+                radioButton.BaseColor = Configuration.CurrentTheme.WindowBackColor;
+                radioButton.FillColor = Configuration.CurrentTheme.LineColor;
+            }
+
+            foreach (GunaCheckBox checkBox in Controls.OfType<GunaCheckBox>())
+            {
+                checkBox.ForeColor = Configuration.CurrentTheme.ForeColor;
+                checkBox.BaseColor = Configuration.CurrentTheme.WindowBackColor;
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            if (DarkRadioButton.Checked)
+            {
+                Properties.Settings.Default.CurrentTheme = DarkThemePreview.CurrentTheme.Name;
             }
             else
             {
-                Instanse = new SettingsForm();
-                Instanse.Show();
+                Properties.Settings.Default.CurrentTheme = LightThemePreview.CurrentTheme.Name;
             }
+            Properties.Settings.Default.Save();
+            Close();
         }
 
-        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
-            Instanse = null;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

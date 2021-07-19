@@ -16,6 +16,12 @@ namespace ImageConverter.Forms
         public MessageBoxForm()
         {
             InitializeComponent();
+            UpdateView();
+        }
+
+        public void UpdateView()
+        {
+            ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
             ApplyTheme();
         }
 

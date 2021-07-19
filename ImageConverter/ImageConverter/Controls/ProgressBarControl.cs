@@ -49,5 +49,12 @@ namespace ImageConverter.Controls
         {
             UpdateView();
         }
+
+        public override string ToString()
+        {
+            if (Value == 0)
+                return string.Empty;
+            else return $"{Value + 1} of {MaxValue}";
+        }
     }
 }

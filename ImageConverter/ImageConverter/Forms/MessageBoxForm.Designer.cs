@@ -30,6 +30,7 @@ namespace ImageConverter.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxForm));
             this.ElipseForm = new Guna.UI.WinForms.GunaElipse(this.components);
             this.MessageTextLabel = new System.Windows.Forms.Label();
             this.OKButton = new Guna.UI.WinForms.GunaButton();
@@ -125,8 +126,10 @@ namespace ImageConverter.Forms
             this.FormHeader.HeaderText = " Image Format Converter";
             this.FormHeader.Location = new System.Drawing.Point(0, 0);
             this.FormHeader.MaximumSize = new System.Drawing.Size(1000, 26);
+            this.FormHeader.MinimiseBox = true;
             this.FormHeader.MinimumSize = new System.Drawing.Size(232, 26);
             this.FormHeader.Name = "FormHeader";
+            this.FormHeader.OnCloseButtonClicked = null;
             this.FormHeader.Size = new System.Drawing.Size(335, 26);
             this.FormHeader.TabIndex = 22;
             this.FormHeader.TargetForm = this;
@@ -136,13 +139,13 @@ namespace ImageConverter.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(335, 140);
             this.Controls.Add(this.FormHeader);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.MessageTextLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(510, 215);
             this.MinimumSize = new System.Drawing.Size(335, 140);
             this.Name = "MessageBoxForm";

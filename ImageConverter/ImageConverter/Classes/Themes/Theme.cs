@@ -4,13 +4,14 @@ namespace ImageConverter.Classes.Themes
 {
     public abstract class Theme
     {
-        public abstract Color WindowBackColor { get; set; }
-        public abstract Color HeaderBackColor { get; set; }
-        public abstract Color ForeColor { get; set; }
-        public abstract Color ActiveColor { get; set; }
-        public abstract Color PanelBackColor { get; set; }
-        public abstract Color OnDragDropColor { get; set; }
-        public abstract Color LineColor { get; set; }
-        public abstract Color StepPanelDisabledColor { get; set; }
+        public abstract string Name { get; }
+        public abstract Color WindowBackColor { get; }
+        public abstract Color HeaderBackColor { get; }
+        public abstract Color ForeColor { get; }
+        public abstract Color ActiveColor { get; }
+        public abstract Color PanelBackColor { get; }
+        public abstract Color OnDragDropColor { get; }
+        public abstract Color LineColor { get; }
+        public abstract Color StepPanelDisabledColor { get; }
     }
 }

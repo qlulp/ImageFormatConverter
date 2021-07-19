@@ -24,6 +24,8 @@ namespace ImageConverter.Controls
                 }
             }
         }
+
+        public Action OnCloseButtonClicked { get; set; }
         public Form TargetForm { get; set; }
         public string HeaderText
         {
@@ -43,10 +45,15 @@ namespace ImageConverter.Controls
         public Header()
         {
             InitializeComponent();
+            UpdateView();
+        }
+
+        public void UpdateView()
+        {
             ApplyTheme();
         }
 
-        public void ApplyTheme()
+        private void ApplyTheme()
         {
             BackColor = Configuration.CurrentTheme.HeaderBackColor;
             HeaderNameLabel.ForeColor = Configuration.CurrentTheme.ForeColor;
@@ -57,7 +64,11 @@ namespace ImageConverter.Controls
         private void CloseButton_Click(object sender, EventArgs e)
         {
             if (TargetForm != null)
+            {
+                if (OnCloseButtonClicked != null)
+                    OnCloseButtonClicked();
                 TargetForm.Close();
+            }
         }
 
         private void HideButton_Click(object sender, EventArgs e)

@@ -117,10 +117,171 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ElipseForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ConvertToLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ConvertToLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="ConvertToLabel.Text" xml:space="preserve">
+    <value>Конвертировать в::</value>
+  </data>
+  <data name="ConvertButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="ConvertButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 42</value>
+  </data>
+  <data name="ConvertButton.Text" xml:space="preserve">
+    <value>Конвертировать</value>
+  </data>
+  <data name="ProgramNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>654, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>660, 628</value>
+  </data>
+  <data name="VersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="VersionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 577</value>
+  </data>
+  <data name="VersionLabel.Text" xml:space="preserve">
+    <value>GitHub: qlulp
+Верися: v1.0.0</value>
+  </data>
+  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 2</value>
+  </data>
+  <data name="DropPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="DropPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 116</value>
+  </data>
+  <data name="WMFButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="WMFButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 530</value>
+  </data>
+  <data name="PNGButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="PNGButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>589, 504</value>
+  </data>
+  <data name="TIFFButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="TIFFButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 530</value>
+  </data>
+  <data name="JPEGButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="JPEGButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>524, 504</value>
+  </data>
+  <data name="ICOButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="ICOButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 504</value>
+  </data>
+  <data name="GIFButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="GIFButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>413, 504</value>
+  </data>
+  <data name="EXIFButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="EXIFButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 504</value>
+  </data>
+  <data name="BMPButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="BMPButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 504</value>
+  </data>
+  <data name="EMFButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="EMFButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 504</value>
+  </data>
+  <data name="SelectedCountLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="SelectedCountLabel.Text" xml:space="preserve">
+    <value>Выбрано: 0</value>
+  </data>
+  <data name="LinePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="LinePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 2</value>
+  </data>
+  <data name="ClearSelectedButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="ClearSelectedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 444</value>
+  </data>
+  <data name="ClearSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 42</value>
+  </data>
+  <data name="ClearSelectedButton.Text" xml:space="preserve">
+    <value>Удалить выбранные</value>
+  </data>
+  <data name="ClearAllButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="ClearAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 42</value>
+  </data>
+  <data name="ClearAllButton.Text" xml:space="preserve">
+    <value>Удалить всё</value>
+  </data>
+  <data name="ImagePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="ImagePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 235</value>
+  </data>
+  <data name="CountLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="CountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 177</value>
+  </data>
+  <data name="CountLabel.Text" xml:space="preserve">
+    <value>Количество: 0</value>
+  </data>
+  <data name="OpenFolderButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="OpenFolderButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 574</value>
+  </data>
+  <data name="OpenFolderButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 42</value>
+  </data>
+  <data name="OpenFolderButton.Text" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 26</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMMOAADDDgAAAAAAAAAA
@@ -196,5 +357,85 @@
         EMf4cAHH/CGDx/YDx8fjB//H4w//x+Of4Mfj/+BH4//ER+P/xEfj/8BH4//gx+P/8cfj///H4AAAB+AA
         AAfwAAAP//////////////////////////8=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="HideButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 0</value>
+  </data>
+  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>634, -2</value>
+  </data>
+  <data name="SelectFilesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 25</value>
+  </data>
+  <data name="SelectFilesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 42</value>
+  </data>
+  <data name="SelectFilesButton.Text" xml:space="preserve">
+    <value>Выбрать файлы</value>
+  </data>
+  <data name="DropLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>553, 40</value>
+  </data>
+  <data name="DropLabel.Text" xml:space="preserve">
+    <value>====== или ======
+Перетащите сюда</value>
+  </data>
+  <data name="Step3Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 490</value>
+  </data>
+  <data name="Line2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 209</value>
+  </data>
+  <data name="Line2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2, 240</value>
+  </data>
+  <data name="Step2Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 169</value>
+  </data>
+  <data name="Line1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 69</value>
+  </data>
+  <data name="Line1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2, 60</value>
+  </data>
+  <data name="Step1Panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 30</value>
+  </data>
+  <data name="Tip3Label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt, style=Bold</value>
+  </data>
+  <data name="Tip3Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 457</value>
+  </data>
+  <data name="Tip3Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="Tip3Label.Text" xml:space="preserve">
+    <value>Выберите 
+формат</value>
+  </data>
+  <data name="Tip1Label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold</value>
+  </data>
+  <data name="Tip1Label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Tip1Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="Tip1Label.Text" xml:space="preserve">
+    <value>Выберите файлы</value>
+  </data>
+  <data name="Tip2Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 133</value>
+  </data>
+  <data name="Tip2Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 33</value>
+  </data>
+  <data name="Tip2Label.Text" xml:space="preserve">
+    <value>Измените список</value>
   </data>
 </root>

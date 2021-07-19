@@ -2,7 +2,7 @@
 ## Lightweight, сonvenient and easy to use image format converter tool
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
-![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.1-1.JPG?raw=true)
 
 # Overview
 
@@ -51,6 +51,10 @@ v1.3.0 features:
 - updated user interface
 - other minor changes
 
+v1.3.1 features:
+- added white theme
+- other minor changes
+
 # Screenshots
 
 v1.0.0
@@ -69,3 +73,8 @@ v1.3.0
 
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-1.JPG?raw=true)
 ![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.0-2.JPG?raw=true)
+
+v1.3.1
+
+![alt text](https://github.com/qlulp/ImageFormatConverter/blob/main/Screenshots/v1.3.1-1.JPG?raw=true)
+

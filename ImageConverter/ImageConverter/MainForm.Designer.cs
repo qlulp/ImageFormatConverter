@@ -575,7 +575,7 @@ namespace ImageConverter
             this.ShowStepsCheckBox.FillColor = System.Drawing.Color.White;
             this.ShowStepsCheckBox.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.ShowStepsCheckBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ShowStepsCheckBox.Location = new System.Drawing.Point(12, 458);
+            this.ShowStepsCheckBox.Location = new System.Drawing.Point(12, 648);
             this.ShowStepsCheckBox.Name = "ShowStepsCheckBox";
             this.ShowStepsCheckBox.Size = new System.Drawing.Size(150, 24);
             this.ShowStepsCheckBox.TabIndex = 73;

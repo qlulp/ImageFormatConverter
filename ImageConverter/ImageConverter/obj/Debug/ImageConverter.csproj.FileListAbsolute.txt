@@ -36,3 +36,4 @@ C:\Users\Admin\source\repos\ImageConverter\ImageConverter\obj\Debug\ImageConvert
 C:\Users\Admin\source\repos\ImageConverter\ImageConverter\obj\Debug\ImageConverter.Controls.StepsPanel.resources
 C:\Users\Admin\source\repos\ImageConverter\ImageConverter\obj\Debug\ImageConverter.Forms.MessageBoxForm.resources
 C:\Users\Admin\source\repos\ImageConverter\ImageConverter\obj\Debug\ImageConverter.Forms.SettingsForm.resources
+C:\Users\Admin\source\repos\ImageConverter\ImageConverter\obj\Debug\ImageConverter.csprojAssemblyReference.cache

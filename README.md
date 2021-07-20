@@ -31,9 +31,9 @@ v1.1.0 features:
 - updated user interface
 - added a button to hide the step bar
 - added the ability to resize images
-- Optimized image preview (you can safely work with up to 1000 images)
+- optimized image preview (you can safely work with up to 1000 images)
 - added the ability to resize images while maintaining proportions
-- Added the ability to hide the step bar
+- added the ability to hide the step bar
 - changed application logic
 - mnor bugs fixed
 
